@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:gold_block"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "P": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "V": {
+      "item": "devilcraft:evil_ingot"
+    }
+  },
+  "pattern": [
+    "EPE",
+    "VVV",
+    "NNN"
+  ],
+  "result": {
+    "item": "devilcraft:evil_detector"
+  },
+  "show_notification": true
+}

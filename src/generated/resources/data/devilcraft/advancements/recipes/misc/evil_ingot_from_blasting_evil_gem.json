@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_evil_gem": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "devilcraft:evil_gem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "devilcraft:evil_ingot_from_blasting_evil_gem"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_evil_gem",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "devilcraft:evil_ingot_from_blasting_evil_gem"
+    ]
+  },
+  "sends_telemetry_event": false
+}

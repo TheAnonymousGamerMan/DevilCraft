@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "devilcraft:block/evil_plank",
+    "side": "devilcraft:block/evil_plank",
+    "top": "devilcraft:block/evil_plank"
+  }
+}

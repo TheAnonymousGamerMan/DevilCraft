@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:netherite_block"
+    },
+    "P": {
+      "item": "devilcraft:evil_block"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "PPP",
+    "EEE"
+  ],
+  "result": {
+    "count": 4,
+    "item": "devilcraft:evil_block"
+  },
+  "show_notification": true
+}

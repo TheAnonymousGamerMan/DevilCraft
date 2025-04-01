@@ -1,0 +1,10 @@
+// 1.20.1	2025-03-31T18:06:16.1965775	Tags for minecraft:block mod id devilcraft
+19289c8894f63f21338d5acf3f876e2bd1e442a0 data/forge/tags/blocks/needs_netherite_tool.json
+891d011eb161970a682bcf58a7e9002f9cd8e7fd data/minecraft/tags/blocks/fences.json
+2dee80f6c5d71be32adcf5da36a4248b53f0fd1a data/minecraft/tags/blocks/fence_gates.json
+47b9ae1d7c7bd00be2fa234c8489068c3a24cb86 data/minecraft/tags/blocks/logs_that_burn.json
+4101115391d59c8b8aa055fb9200dc07eccfd179 data/minecraft/tags/blocks/mineable/axe.json
+dfc538c7e650f860c1ed12fe954dd3543c92773f data/minecraft/tags/blocks/mineable/pickaxe.json
+6fc30420ef9baac3ee167f720b4532ecb66f96b7 data/minecraft/tags/blocks/needs_diamond_tool.json
+dfc538c7e650f860c1ed12fe954dd3543c92773f data/minecraft/tags/blocks/needs_iron_tool.json
+88ec79a44a90c8867378f83315a52dbf1d4ae692 data/minecraft/tags/blocks/planks.json

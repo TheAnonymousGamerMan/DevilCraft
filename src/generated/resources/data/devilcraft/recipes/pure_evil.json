@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "devilcraft:wrath"
+    },
+    "G": {
+      "item": "devilcraft:greed"
+    },
+    "L": {
+      "item": "devilcraft:lust"
+    },
+    "N": {
+      "item": "devilcraft:gluttony"
+    },
+    "P": {
+      "item": "devilcraft:pure_evil_block"
+    },
+    "S": {
+      "item": "devilcraft:sloth"
+    },
+    "V": {
+      "item": "devilcraft:envy"
+    },
+    "W": {
+      "item": "devilcraft:pride"
+    }
+  },
+  "pattern": [
+    "EPV",
+    "WSG",
+    "LPN"
+  ],
+  "result": {
+    "item": "devilcraft:pure_evil"
+  },
+  "show_notification": true
+}

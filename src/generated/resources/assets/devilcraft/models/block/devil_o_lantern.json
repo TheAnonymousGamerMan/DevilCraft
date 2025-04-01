@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "devilcraft:block/devil_o_lantern_bottom",
+    "east": "devilcraft:block/devil_o_lantern_south",
+    "north": "devilcraft:block/devil_o_lantern_north",
+    "particle": "devilcraft:block/devil_o_lantern_north",
+    "south": "devilcraft:block/devil_o_lantern_east",
+    "up": "devilcraft:block/devil_o_lantern_top",
+    "west": "devilcraft:block/devil_o_lantern_west"
+  }
+}

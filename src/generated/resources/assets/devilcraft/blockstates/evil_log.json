@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "devilcraft:block/evil_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "devilcraft:block/evil_log"
+    },
+    "axis=z": {
+      "model": "devilcraft:block/evil_log",
+      "x": 90
+    }
+  }
+}

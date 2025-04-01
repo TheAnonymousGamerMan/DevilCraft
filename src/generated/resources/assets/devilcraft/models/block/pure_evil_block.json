@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "devilcraft:block/pure_evil_block"
+  }
+}

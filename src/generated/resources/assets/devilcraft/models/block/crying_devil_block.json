@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "devilcraft:block/crying_devil_block_bottom",
+    "east": "devilcraft:block/crying_devil_block_side",
+    "north": "devilcraft:block/crying_devil_block_side",
+    "particle": "devilcraft:block/crying_devil_block_side",
+    "south": "devilcraft:block/crying_devil_block_side",
+    "up": "devilcraft:block/crying_devil_block_top",
+    "west": "devilcraft:block/crying_devil_block_side"
+  }
+}

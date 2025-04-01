@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 3.0,
+  "group": "evil_ingot",
+  "ingredient": {
+    "item": "devilcraft:evil_ore"
+  },
+  "result": "devilcraft:evil_ingot"
+}

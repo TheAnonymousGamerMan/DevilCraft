@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "devilcraft:evil_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "devilcraft:evil_ingot"
+  }
+}

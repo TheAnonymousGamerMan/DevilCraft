@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "devilcraft:block/devil_pumpkin_bottom",
+    "east": "devilcraft:block/devil_pumpkin_south",
+    "north": "devilcraft:block/devil_pumpkin_north",
+    "particle": "devilcraft:block/devil_pumpkin_north",
+    "south": "devilcraft:block/devil_pumpkin_east",
+    "up": "devilcraft:block/devil_pumpkin_top",
+    "west": "devilcraft:block/devil_pumpkin_west"
+  }
+}

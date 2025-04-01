@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "devilcraft:block/evil_slab"
+    },
+    "type=double": {
+      "model": "devilcraft:block/evil_plank"
+    },
+    "type=top": {
+      "model": "devilcraft:block/evil_slab_top"
+    }
+  }
+}

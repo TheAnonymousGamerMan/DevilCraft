@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "devilcraft:block/evil_grass_bottom",
+    "east": "devilcraft:block/evil_grass_side",
+    "north": "devilcraft:block/evil_grass_side",
+    "particle": "devilcraft:block/evil_grass_side",
+    "south": "devilcraft:block/evil_grass_side",
+    "up": "devilcraft:block/evil_grass_top",
+    "west": "devilcraft:block/evil_grass_side"
+  }
+}
