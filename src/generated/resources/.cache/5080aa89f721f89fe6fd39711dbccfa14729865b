@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-31T17:35:11.5950118	Item Models: devilcraft
+// 1.20.1	2025-04-01T17:49:21.6917072	Item Models: devilcraft
 1d77e039951f6e62ee143b79945a8dec65555641 assets/devilcraft/models/item/devil_horns.json
 5d88e3f76e8ef2d46269401afa6ef435429cb97f assets/devilcraft/models/item/devil_meat.json
 b560b534ed2f8221524136f6269df225e9f47468 assets/devilcraft/models/item/devil_spawn_egg.json
@@ -21,7 +21,6 @@ ce8e6b450b68800ab1d53f57b1cd68b0cdedbe05 assets/devilcraft/models/item/greed.jso
 cfbc597252563ccfcc962489e7d58fac44ab4655 assets/devilcraft/models/item/lust.json
 2b9800401c4e59e560893499cfd61b9506c5658f assets/devilcraft/models/item/pride.json
 409fed8d4ce0ec2f907006a8ab858da1467a5e42 assets/devilcraft/models/item/pure_evil.json
-9d6a7dcca45d2028d6ddb7b44654cfb0bf3ad1e3 assets/devilcraft/models/item/satan_pitchfork.json
 f4516b54d1576832bc249786f50a362db51982fd assets/devilcraft/models/item/sloth.json
 eaeb91b8422d6683fb69ac72c9760a734a09aa68 assets/devilcraft/models/item/test.json
 fe6e9f6a171dafb5ac0d39ddbfb292a739cf9bea assets/devilcraft/models/item/un_eye.json

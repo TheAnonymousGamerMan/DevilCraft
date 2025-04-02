@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "devilcraft:item/satan_pitchfork_3d"
+  },
+  "perspective": {
+    "gui": {
+      "parent": "devilcraft:item/satan_pitchfork_2d"
+    },
+    "ground": {
+      "parent": "devilcraft:item/satan_pitchfork_2d"
+    },
+    "fixed": {
+      "parent": "devilcraft:item/satan_pitchfork_2d"
+    }
+  }
+}

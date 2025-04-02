@@ -30,7 +30,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DEVIL_MEAT);
         simpleItem(ModItems.DEVIL_SPAWN_EGG);
         simpleItem(ModItems.DEVIL_WHIP);
-        simpleItem(ModItems.SATAN_PITCHFORK);
         simpleItem(ModItems.SLOTH);
         simpleItem(ModItems.TEST);
         simpleItem(ModItems.GREED);
