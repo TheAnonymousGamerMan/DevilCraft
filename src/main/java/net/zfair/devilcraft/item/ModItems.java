@@ -2,13 +2,13 @@ package net.zfair.devilcraft.item;
 
 import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.RegistryObject;
+import net.zfair.devilcraft.item.custom.SATAN_PITCHFORK;
 import net.zfair.devilcraft.devilcraft;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.zfair.devilcraft.item.custom.EVIL_DETECTOR;
-import net.zfair.devilcraft.item.custom.SATAN_PITCHFORK;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
