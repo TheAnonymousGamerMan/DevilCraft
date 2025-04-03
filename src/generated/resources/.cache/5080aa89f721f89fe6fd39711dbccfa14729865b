@@ -1,19 +1,24 @@
-// 1.20.1	2025-04-01T17:49:21.6917072	Item Models: devilcraft
+// 1.20.1	2025-04-03T16:26:14.1600613	Item Models: devilcraft
 1d77e039951f6e62ee143b79945a8dec65555641 assets/devilcraft/models/item/devil_horns.json
 5d88e3f76e8ef2d46269401afa6ef435429cb97f assets/devilcraft/models/item/devil_meat.json
 b560b534ed2f8221524136f6269df225e9f47468 assets/devilcraft/models/item/devil_spawn_egg.json
 a899f376ee21422dc3142e41e20631f1010392ef assets/devilcraft/models/item/devil_whip.json
 babc083a9d42aef898804f8901ed9493bd653e8a assets/devilcraft/models/item/envy.json
+819e21c4fbade7da00ae2504385704e8c6942bb6 assets/devilcraft/models/item/evil_axe.json
 860e93e95e64a77b2d32f79833dd782803672189 assets/devilcraft/models/item/evil_button.json
 1cb7e799d97942c2f2fa8ce608635bb2e655eba5 assets/devilcraft/models/item/evil_detector.json
 542adfa6fc1578dd7a609a36426d8d8ee55a7c64 assets/devilcraft/models/item/evil_door.json
 7b17b37b52fe7a54490f93526667638a77fce3aa assets/devilcraft/models/item/evil_fence.json
 6ff1178aa97428e1c33e2219843df202de87e554 assets/devilcraft/models/item/evil_fence_gate.json
 b3d2f9b6cfe1e1a5180234ff4751288135a4e777 assets/devilcraft/models/item/evil_gem.json
+cc38e9fd79815c82fde9ba820467a962f6c59cbd assets/devilcraft/models/item/evil_hoe.json
 320893c15232934a78a1fe4bd541b86db6ab7589 assets/devilcraft/models/item/evil_ingot.json
+fc1399c8c8d1ff32dd231606ff7782fbca401458 assets/devilcraft/models/item/evil_pickaxe.json
 2da8f1cb5a1c76973ea2f50296d34a936611a20c assets/devilcraft/models/item/evil_pressure_plate.json
+3610246311225c98f0c1178c22e9140aa26e099e assets/devilcraft/models/item/evil_shovel.json
 50ef5fa7d2856c51fccc1e3a0c34e43dee29dad5 assets/devilcraft/models/item/evil_slab.json
 8e7ab489bb01e2ff241c3bbdbe9cb22cb4dc49ce assets/devilcraft/models/item/evil_stairs.json
+1051e3b99cf9667759133c0f3942aca4405ce3a5 assets/devilcraft/models/item/evil_sword.json
 d85075a4af53ada38bdd93c398e656747fe9f8c4 assets/devilcraft/models/item/evil_trapdoor.json
 32d9c7f03b83a0a8fdf55e6675e755e29dabcc22 assets/devilcraft/models/item/eye.json
 106b5f36ee5d75a5803c4f4e3d80014fe3dca4ff assets/devilcraft/models/item/gluttony.json

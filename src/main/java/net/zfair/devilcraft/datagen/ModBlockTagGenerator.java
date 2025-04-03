@@ -11,6 +11,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.zfair.devilcraft.block.ModBlocks;
 import net.minecraft.resources.ResourceLocation;
 import net.zfair.devilcraft.devilcraft;
+import net.zfair.devilcraft.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -49,6 +50,9 @@ this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 ModBlocks.EVIL_TRAPDOOR.get(),
                 ModBlocks.EVIL_PRESSURE_PLATE.get()
         );
+this.tag(ModTags.Blocks.NEEDS_EVIL_TOOL
+
+);
 
 this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
         .add(ModBlocks.PURE_EVIL_BLOCK.get(),

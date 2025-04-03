@@ -39,6 +39,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.LUST);
         simpleItem(ModItems.EVIL_GEM);
 
+        handheldItem(ModItems.EVIL_SWORD);
+        handheldItem(ModItems.EVIL_AXE);
+        handheldItem(ModItems.EVIL_PICKAXE);
+        handheldItem(ModItems.EVIL_SHOVEL);
+        handheldItem(ModItems.EVIL_HOE);
+
         simpleBlockItem(ModBlocks.EVIL_DOOR);
         evenSimplerBlockItem(ModBlocks.EVIL_PRESSURE_PLATE);
         evenSimplerBlockItem(ModBlocks.EVIL_FENCE_GATE);
@@ -81,6 +87,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
                 .texture("wall", ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.withDefaultNamespace("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",

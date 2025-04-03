@@ -1,10 +1,9 @@
 package net.zfair.devilcraft.item;
 
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.RegistryObject;
 import net.zfair.devilcraft.item.custom.SATAN_PITCHFORK;
 import net.zfair.devilcraft.devilcraft;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -70,6 +69,22 @@ public class ModItems {
 
     public static final RegistryObject<Item> DEVIL_WHIP = ITEMS.register("devil_whip",
             () -> new SATAN_PITCHFORK(Tiers.NETHERITE, 10, -1.2f, new Item.Properties().durability(2000)));
+
+    public static final RegistryObject<Item> EVIL_SWORD = ITEMS.register("evil_sword",
+            () -> new SwordItem(ModToolTiers.Evil, 4, 2, new Item.Properties()));
+
+    public static final RegistryObject<Item> EVIL_PICKAXE = ITEMS.register("evil_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.Evil, 1, 1, new Item.Properties()));
+
+    public static final RegistryObject<Item> EVIL_AXE = ITEMS.register("evil_axe",
+            () -> new AxeItem(ModToolTiers.Evil, 7, 1, new Item.Properties()));
+
+    public static final RegistryObject<Item> EVIL_SHOVEL = ITEMS.register("evil_shovel",
+            () -> new ShovelItem(ModToolTiers.Evil, 0, 0, new Item.Properties()));
+
+    public static final RegistryObject<Item> EVIL_HOE = ITEMS.register("evil_hoe",
+            () -> new HoeItem(ModToolTiers.Evil, 0, 0, new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

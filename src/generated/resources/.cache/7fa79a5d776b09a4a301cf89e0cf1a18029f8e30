@@ -1,4 +1,5 @@
-// 1.20.1	2025-03-31T18:06:16.1965775	Tags for minecraft:block mod id devilcraft
+// 1.20.1	2025-04-03T16:26:14.1590616	Tags for minecraft:block mod id devilcraft
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/devilcraft/tags/blocks/needs_evil_tool.json
 19289c8894f63f21338d5acf3f876e2bd1e442a0 data/forge/tags/blocks/needs_netherite_tool.json
 891d011eb161970a682bcf58a7e9002f9cd8e7fd data/minecraft/tags/blocks/fences.json
 2dee80f6c5d71be32adcf5da36a4248b53f0fd1a data/minecraft/tags/blocks/fence_gates.json

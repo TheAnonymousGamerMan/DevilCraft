@@ -12,7 +12,7 @@ import net.zfair.devilcraft.devilcraft;
 
 public class ModTags {
     public static class Blocks {
-        public static final TagKey<Block> TEST = tag("test");
+        public static final TagKey<Block> NEEDS_EVIL_TOOL = tag("needs_evil_tool");
 
 
         private static TagKey<Block> tag(String name){

@@ -37,6 +37,13 @@ DeferredRegister.create(Registries.CREATIVE_MODE_TAB, devilcraft.MOD_ID);
                         pOutput.accept(ModItems.DEVIL_MEAT.get());
                         pOutput.accept(ModItems.DEVIL_HORNS.get());
                         pOutput.accept(ModItems.TEST.get());
+
+                        pOutput.accept(ModItems.EVIL_SWORD.get());
+                        pOutput.accept(ModItems.EVIL_PICKAXE.get());
+                        pOutput.accept(ModItems.EVIL_AXE.get());
+                        pOutput.accept(ModItems.EVIL_SHOVEL.get());
+                        pOutput.accept(ModItems.EVIL_HOE.get());
+
                         pOutput.accept(ModBlocks.CRYING_DEVIL_BLOCK.get());
                         pOutput.accept(ModBlocks.DEVIL_PUMPKIN.get());
                         pOutput.accept(ModBlocks.DEVIL_O_LANTERN.get());
@@ -48,6 +55,9 @@ DeferredRegister.create(Registries.CREATIVE_MODE_TAB, devilcraft.MOD_ID);
                         pOutput.accept(ModBlocks.DEVIL_PORTAL_FRAME.get());
                         pOutput.accept(ModBlocks.EVIL_LOG.get());
                         pOutput.accept(ModBlocks.EVIL_PLANK.get());
+                        pOutput.accept(ModBlocks.EVIL_GRASS.get());
+                        pOutput.accept(ModBlocks.EVIL_DIRT.get());
+
                         pOutput.accept(ModBlocks.EVIL_BUTTON.get());
                         pOutput.accept(ModBlocks.EVIL_FENCE_GATE.get());
                         pOutput.accept(ModBlocks.EVIL_DOOR.get());
@@ -57,8 +67,8 @@ DeferredRegister.create(Registries.CREATIVE_MODE_TAB, devilcraft.MOD_ID);
                         pOutput.accept(ModBlocks.EVIL_PRESSURE_PLATE.get());
                         pOutput.accept(ModBlocks.EVIL_FENCE.get());
                         pOutput.accept(ModBlocks.EVIL_TRAPDOOR.get());
-                        pOutput.accept(ModBlocks.EVIL_GRASS.get());
-                        pOutput.accept(ModBlocks.EVIL_DIRT.get());
+
+
                     })
 
                     .build());
