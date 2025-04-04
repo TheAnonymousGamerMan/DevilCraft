@@ -1,6 +1,7 @@
 package net.zfair.devilcraft;
 
 import com.mojang.logging.LogUtils;
+import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -10,7 +11,9 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -23,6 +26,7 @@ import org.slf4j.Logger;
 @Mod(devilcraft.MOD_ID)
 public class devilcraft
 {
+
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "devilcraft";
     // Directly reference a slf4j logger
@@ -53,8 +57,6 @@ public class devilcraft
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.TEST);
-            event.accept(ModItems.EYE);
         }
     }
 
