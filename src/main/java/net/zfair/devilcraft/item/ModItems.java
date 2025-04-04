@@ -2,6 +2,7 @@ package net.zfair.devilcraft.item;
 
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.RegistryObject;
+import net.zfair.devilcraft.item.custom.ModArmorItem;
 import net.zfair.devilcraft.item.custom.SATAN_PITCHFORK;
 import net.zfair.devilcraft.devilcraft;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -71,19 +72,32 @@ public class ModItems {
             () -> new SATAN_PITCHFORK(Tiers.NETHERITE, 10, -1.2f, new Item.Properties().durability(2000)));
 
     public static final RegistryObject<Item> EVIL_SWORD = ITEMS.register("evil_sword",
-            () -> new SwordItem(ModToolTiers.Evil, 4, 2, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.Evil, 4, -2.4f, new Item.Properties()));
 
     public static final RegistryObject<Item> EVIL_PICKAXE = ITEMS.register("evil_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.Evil, 1, 1, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.Evil, 1, -2.6f, new Item.Properties()));
 
     public static final RegistryObject<Item> EVIL_AXE = ITEMS.register("evil_axe",
-            () -> new AxeItem(ModToolTiers.Evil, 7, 1, new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.Evil, 7, -3f, new Item.Properties()));
 
     public static final RegistryObject<Item> EVIL_SHOVEL = ITEMS.register("evil_shovel",
-            () -> new ShovelItem(ModToolTiers.Evil, 0, 0, new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.Evil, 0, -3f, new Item.Properties()));
 
     public static final RegistryObject<Item> EVIL_HOE = ITEMS.register("evil_hoe",
-            () -> new HoeItem(ModToolTiers.Evil, 0, 0, new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.Evil, -4, 0, new Item.Properties()));
+
+    public static final RegistryObject<Item> EVIL_HELMET = ITEMS.register("evil_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.EVIL, ArmorItem.Type.HELMET, new Item.Properties()));
+
+    public static final RegistryObject<Item> EVIL_CHESTPLATE = ITEMS.register("evil_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.EVIL, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final RegistryObject<Item> EVIL_LEGGINGS = ITEMS.register("evil_leggings",
+            () -> new ArmorItem(ModArmorMaterials.EVIL, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final RegistryObject<Item> EVIL_BOOTS = ITEMS.register("evil_boots",
+            () -> new ArmorItem(ModArmorMaterials.EVIL, ArmorItem.Type.BOOTS, new Item.Properties()));
+
 
 
     public static void register(IEventBus eventBus) {

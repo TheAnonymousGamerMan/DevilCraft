@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ModToolTiers {
     public static final Tier Evil = TierSortingRegistry.registerTier(
-            new ForgeTier(5, 1500, 1f, 4f, 25,
+            new ForgeTier(5, 1500, 4f, 4f, 25,
                     ModTags.Blocks.NEEDS_EVIL_TOOL, () -> Ingredient.of(ModItems.EVIL_INGOT.get())),
             ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID, "evil_ingot"), List.of(Tiers.NETHERITE),List.of()
     );

@@ -44,6 +44,11 @@ DeferredRegister.create(Registries.CREATIVE_MODE_TAB, devilcraft.MOD_ID);
                         pOutput.accept(ModItems.EVIL_SHOVEL.get());
                         pOutput.accept(ModItems.EVIL_HOE.get());
 
+                        pOutput.accept(ModItems.EVIL_HELMET.get());
+                        pOutput.accept(ModItems.EVIL_CHESTPLATE.get());
+                        pOutput.accept(ModItems.EVIL_LEGGINGS.get());
+                        pOutput.accept(ModItems.EVIL_BOOTS.get());
+
                         pOutput.accept(ModBlocks.CRYING_DEVIL_BLOCK.get());
                         pOutput.accept(ModBlocks.DEVIL_PUMPKIN.get());
                         pOutput.accept(ModBlocks.DEVIL_O_LANTERN.get());
