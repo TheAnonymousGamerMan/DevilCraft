@@ -60,6 +60,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PURE_EVIL);
         simpleItem(ModItems.LUST);
         simpleItem(ModItems.EVIL_GEM);
+        simpleItem(ModItems.EVIL_SEEDS);
 
         handheldItem(ModItems.EVIL_SWORD);
         handheldItem(ModItems.EVIL_AXE);
@@ -82,6 +83,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         buttonItem(ModBlocks.EVIL_BUTTON, ModBlocks.EVIL_PLANK);
         trapdoorItem(ModBlocks.EVIL_TRAPDOOR);
 
+        simpleBlockItemBlockTexture(ModBlocks.EVIL_ROSE);
+
+        withExistingParent(ModItems.EVIL_SPIRIT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
@@ -169,6 +173,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockItemBlockTexture(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID,"block/" + item.getId().getPath()));
     }
 
 }

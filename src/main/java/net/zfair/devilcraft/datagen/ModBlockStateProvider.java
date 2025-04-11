@@ -2,13 +2,19 @@ package net.zfair.devilcraft.datagen;
 
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.zfair.devilcraft.block.ModBlocks;
+import net.zfair.devilcraft.block.custom.EvilCropBlock;
 import net.zfair.devilcraft.devilcraft;
+
+import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider{
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -45,6 +51,28 @@ public class ModBlockStateProvider extends BlockStateProvider{
 
         doorBlockWithRenderType(((DoorBlock) ModBlocks.EVIL_DOOR.get()), modLoc("block/evil_door_bottom"),modLoc("block/evil_door_top"),"cutout");
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.EVIL_TRAPDOOR.get()), modLoc("block/evil_trapdoor"), true, "cutout");
+
+        makeEvilCrop((CropBlock) ModBlocks.EVIL_CROP.get(), "evil_stage","evil_stage");
+
+        simpleBlockWithItem(ModBlocks.EVIL_ROSE.get(), models().cross(blockTexture(ModBlocks.EVIL_ROSE.get()).getPath(),
+                blockTexture(ModBlocks.EVIL_ROSE.get())).renderType("cutout"));
+        simpleBlockWithItem(ModBlocks.POTTED_EVIL_ROSE.get(), models().singleTexture("potted_catmint", ResourceLocation.withDefaultNamespace("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.EVIL_ROSE.get())).renderType("cutout"));
+    }
+
+    public void makeEvilCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> EvilStates(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+
+    private ConfiguredModel[] EvilStates(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((EvilCropBlock) block).getAgeProperty()),
+                ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID, "block/" + textureName + state.getValue(((EvilCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

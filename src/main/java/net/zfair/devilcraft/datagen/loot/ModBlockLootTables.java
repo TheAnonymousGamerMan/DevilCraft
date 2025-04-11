@@ -1,5 +1,6 @@
 package net.zfair.devilcraft.datagen.loot;
 
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -8,8 +9,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.registries.RegistryObject;
 import net.zfair.devilcraft.block.ModBlocks;
+import net.zfair.devilcraft.block.custom.EvilCropBlock;
 import net.zfair.devilcraft.item.ModItems;
 
 import java.util.Set;
@@ -39,6 +43,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.EVIL_PLANK.get());
         this.dropSelf(ModBlocks.EVIL_TRAPDOOR.get());
 
+        this.dropSelf(ModBlocks.EVIL_ROSE.get());
+
+        this.add(ModBlocks.POTTED_EVIL_ROSE.get(), createPotFlowerItemTable(ModBlocks.EVIL_ROSE.get()));
+
         this.add(ModBlocks.EVIL_SLAB.get(),
         block -> createSlabItemTable(ModBlocks.EVIL_SLAB.get()));
 
@@ -51,6 +59,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.DEEPSLATE_EVIL_ORE.get(),
                 block -> createGenericOreDrop(ModBlocks.DEEPSLATE_EVIL_ORE.get(), ModItems.EVIL_GEM.get()));
 
+        LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.EVIL_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(EvilCropBlock.AGE, 5));
+
+        this.add(ModBlocks.EVIL_CROP.get(), createCropDrops(ModBlocks.EVIL_CROP.get(), ModItems.EVIL_GEM.get(),
+                ModItems.EVIL_SEEDS.get(), lootitemcondition$builder));
     }
     protected LootTable.Builder createGenericOreDrop(Block pBlock, Item Item) {
         return createSilkTouchDispatchTable(pBlock,

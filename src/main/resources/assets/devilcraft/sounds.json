@@ -1,0 +1,8 @@
+{
+  "test": {
+    "subtitles": "sounds.devilcraft.test",
+    "sounds": [
+      "devilcraft:test"
+    ]
+  }
+}

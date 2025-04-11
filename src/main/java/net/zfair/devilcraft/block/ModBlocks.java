@@ -2,6 +2,7 @@ package net.zfair.devilcraft.block;
 
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -11,6 +12,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.zfair.devilcraft.block.custom.EvilCropBlock;
 import net.zfair.devilcraft.block.custom.Oriental;
 import net.zfair.devilcraft.devilcraft;
 import net.zfair.devilcraft.item.ModItems;
@@ -86,6 +88,16 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> EVIL_GRASS = registerBlock("evil_grass",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).strength(2f).sound(SoundType.GRAVEL)));
+
+    public static final RegistryObject<Block> EVIL_CROP = BLOCKS.register("evil_crop",
+            () -> new EvilCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> EVIL_ROSE = registerBlock("evil_rose",
+            () -> new FlowerBlock(() -> MobEffects.BAD_OMEN, 5, BlockBehaviour.Properties.copy(Blocks.POPPY).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> POTTED_EVIL_ROSE = BLOCKS.register("potted_evil_rose",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.EVIL_ROSE,
+            BlockBehaviour.Properties.copy(Blocks.POPPY).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

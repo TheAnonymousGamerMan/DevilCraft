@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_evil_block": {
+    "has_pure_evil_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "devilcraft:evil_block"
+              "devilcraft:pure_evil_block"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_evil_block",
+      "has_pure_evil_block",
       "has_the_recipe"
     ]
   ],

@@ -1,7 +1,10 @@
 package net.zfair.devilcraft.item;
 
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.RegistryObject;
+import net.zfair.devilcraft.block.ModBlocks;
+import net.zfair.devilcraft.entity.ModEntities;
 import net.zfair.devilcraft.item.custom.ModArmorItem;
 import net.zfair.devilcraft.item.custom.SATAN_PITCHFORK;
 import net.zfair.devilcraft.devilcraft;
@@ -98,7 +101,12 @@ public class ModItems {
     public static final RegistryObject<Item> EVIL_BOOTS = ITEMS.register("evil_boots",
             () -> new ArmorItem(ModArmorMaterials.EVIL, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    public static final RegistryObject<Item> EVIL_SEEDS = ITEMS.register("evil_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.EVIL_CROP.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> EVIL_SPIRIT_SPAWN_EGG = ITEMS.register("evil_spirit_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.EVIL_SPIRIT, 0xfc031c, 0x82030f,
+                    new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -30,6 +30,12 @@
   "item.devilcraft.evil_leggings": "Evil Leggings",
   "item.devilcraft.evil_boots": "Evil Boots",
 
+  "item.devilcraft.evil_seeds": "Evil Seeds",
+
+  "item.devilcraft.evil_spirit_spawn_egg": "Evil Spirit Spawn Egg",
+
+  "block.devilcraft.evil_rose": "Evil Rose",
+
   "block.devilcraft.very_evil_block": "Very Evil Block",
   "block.devilcraft.pure_evil_block": "Block Of Pure Evil",
   "block.devilcraft.evil_block": "Block Of Evil",
@@ -53,6 +59,8 @@
   "block.devilcraft.evil_trapdoor":"Evil Trapdoor",
 
   "tooltip.devilcraft.evil_detector.tooltip": "Finds Evil Ore in a 32x32 Radius",
+
+  "sounds.devilcraft.test": "Test",
 
   "creativetab.devil_tab": "Devil's Items"
 }

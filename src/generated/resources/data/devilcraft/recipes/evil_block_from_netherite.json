@@ -3,20 +3,20 @@
   "category": "misc",
   "key": {
     "E": {
-      "item": "minecraft:netherite_block"
+      "item": "minecraft:netherite_ingot"
     },
     "P": {
-      "item": "devilcraft:evil_block"
+      "item": "devilcraft:pure_evil_block"
     }
   },
   "pattern": [
     "EEE",
-    "PPP",
+    "EPE",
     "EEE"
   ],
   "result": {
-    "count": 4,
-    "item": "devilcraft:evil_block"
+    "count": 2,
+    "item": "devilcraft:pure_evil_block"
   },
   "show_notification": true
 }

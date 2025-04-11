@@ -1,6 +1,10 @@
 package net.zfair.devilcraft;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraft.client.Minecraft;
@@ -18,8 +22,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.zfair.devilcraft.block.ModBlocks;
+import net.zfair.devilcraft.entity.ModEntities;
+import net.zfair.devilcraft.entity.client.EvilSpiritRenderer;
 import net.zfair.devilcraft.item.ModCreativeModTabs;
 import net.zfair.devilcraft.item.ModItems;
+import net.zfair.devilcraft.loot.ModLootModifiers;
+import net.zfair.devilcraft.sound.ModSounds;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -43,6 +51,11 @@ public class devilcraft
 
         modEventBus.addListener(this::commonSetup);
 
+        ModLootModifiers.register(modEventBus);
+
+        ModSounds.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -51,8 +64,10 @@ public class devilcraft
 
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.EVIL_ROSE.getId(), ModBlocks.POTTED_EVIL_ROSE);
+        });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -74,8 +89,8 @@ public class devilcraft
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
+            EntityRenderers.register(ModEntities.EVIL_SPIRIT.get(), EvilSpiritRenderer::new);
+            LOGGER.info("DEVIL CRAFTING");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
 
         }

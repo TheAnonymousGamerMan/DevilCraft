@@ -80,13 +80,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_pure_evil_block", has(ModBlocks.PURE_EVIL_BLOCK.get()))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EVIL_BLOCK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.PURE_EVIL_BLOCK.get(), 2)
                 .pattern("EEE")
-                .pattern("PPP")
+                .pattern("EPE")
                 .pattern("EEE")
-                .define('E', Blocks.NETHERITE_BLOCK)
-                .define('P', ModBlocks.EVIL_BLOCK.get())
-                .unlockedBy("has_evil_block", has(ModBlocks.EVIL_BLOCK.get()))
+                .define('E', Items.NETHERITE_INGOT)
+                .define('P', ModBlocks.PURE_EVIL_BLOCK.get())
+                .unlockedBy("has_pure_evil_block", has(ModBlocks.PURE_EVIL_BLOCK.get()))
                 .save(pWriter, devilcraft.MOD_ID + ":evil_block_from_netherite");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EYE.get())
@@ -107,11 +107,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.VERY_EVIL_BLOCK.get())
                 .unlockedBy("has_very_evil_block", has(ModBlocks.VERY_EVIL_BLOCK.get()))
                 .save(pWriter, devilcraft.MOD_ID + ":evil_block_from_very_evil_block");
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.VERY_EVIL_BLOCK.get(), 9)
-                .requires(ModBlocks.PURE_EVIL_BLOCK.get())
-                .unlockedBy("has_pure_evil_block", has(ModBlocks.PURE_EVIL_BLOCK.get()))
-                .save(pWriter, devilcraft.MOD_ID + ":very_evil_block_from_pure_evil_block");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.EVIL_PLANK.get(), 4)
                 .requires(ModBlocks.EVIL_LOG.get())
