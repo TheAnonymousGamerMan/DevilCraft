@@ -84,6 +84,9 @@ DeferredRegister.create(Registries.CREATIVE_MODE_TAB, devilcraft.MOD_ID);
                         pOutput.accept(ModBlocks.EVIL_FENCE.get());
                         pOutput.accept(ModBlocks.EVIL_TRAPDOOR.get());
 
+                        pOutput.accept(ModBlocks.EVIL_SIGN.get());
+                        pOutput.accept(ModBlocks.EVIL_HANGING_SIGN.get());
+
                         pOutput.accept(ModItems.EVIL_SEEDS.get());
 
                         pOutput.accept(ModBlocks.EVIL_ROSE.get());

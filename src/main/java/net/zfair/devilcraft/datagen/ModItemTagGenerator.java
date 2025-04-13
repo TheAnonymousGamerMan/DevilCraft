@@ -34,5 +34,9 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
         this.tag(ItemTags.PLANKS)
                 .add(ModBlocks.EVIL_PLANK.get().asItem());
+
+        this.tag(ItemTags.DIRT)
+                .add(ModBlocks.EVIL_DIRT.get().asItem())
+                .add(ModBlocks.EVIL_GRASS.get().asItem());
     }
 }

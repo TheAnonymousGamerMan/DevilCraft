@@ -78,6 +78,10 @@ this.tag(BlockTags.MINEABLE_WITH_AXE)
                 ModBlocks.EVIL_TRAPDOOR.get(),
                 ModBlocks.EVIL_PRESSURE_PLATE.get()
         );
+
+this.tag(BlockTags.MINEABLE_WITH_HOE)
+        .add(ModBlocks.EVIL_LEAVES.get());
+
 this.tag(BlockTags.LOGS_THAT_BURN)
         .add(ModBlocks.EVIL_LOG.get())
         .add(ModBlocks.STRIPPED_EVIL_LOG.get())
@@ -94,5 +98,9 @@ this.tag(BlockTags.FENCES)
 this.tag(BlockTags.FENCE_GATES)
         .add(ModBlocks.EVIL_FENCE_GATE.get()
         );
+
+this.tag(BlockTags.DIRT)
+        .add(ModBlocks.EVIL_DIRT.get())
+        .add(ModBlocks.EVIL_GRASS.get());
     }
 }

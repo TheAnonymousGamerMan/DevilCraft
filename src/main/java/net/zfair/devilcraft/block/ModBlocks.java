@@ -12,12 +12,10 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.zfair.devilcraft.block.custom.AltarBlock;
-import net.zfair.devilcraft.block.custom.EvilCropBlock;
-import net.zfair.devilcraft.block.custom.ModEvilFlammableRotatedPillarBlock;
-import net.zfair.devilcraft.block.custom.Oriental;
+import net.zfair.devilcraft.block.custom.*;
 import net.zfair.devilcraft.devilcraft;
 import net.zfair.devilcraft.item.ModItems;
+import net.zfair.devilcraft.util.ModWoodTypes;
 
 import java.util.function.Supplier;
 
@@ -65,10 +63,10 @@ public class ModBlocks {
             () -> new ModEvilFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3f).sound(SoundType.WOOD).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> EVIL_LEAVES = registerBlock("evil_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).strength(3f).sound(SoundType.AZALEA_LEAVES).requiresCorrectToolForDrops()));
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.AZALEA_LEAVES)));
 
     public static final RegistryObject<Block> EVIL_PLANK = registerBlock("evil_plank",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(1f).sound(SoundType.WOOD).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2f).sound(SoundType.WOOD).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> EVIL_STAIRS = registerBlock("evil_stairs",
             () -> new StairBlock(() -> ModBlocks.EVIL_PLANK.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2f).sound(SoundType.WOOD).requiresCorrectToolForDrops()));
@@ -115,6 +113,20 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> ALTAR_BLOCK = registerBlock("altar_block",
             () -> new AltarBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).noOcclusion()));
+
+    public static final RegistryObject<Block> EVIL_SIGN = BLOCKS.register("evil_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.EVIL));
+
+    public static final RegistryObject<Block> EVIL_WALL_SIGN = BLOCKS.register("evil_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.EVIL));
+
+
+    public static final RegistryObject<Block> EVIL_HANGING_SIGN = BLOCKS.register("evil_hanging_sign",
+            () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), ModWoodTypes.EVIL));
+
+    public static final RegistryObject<Block> EVIL_WALL_HANGING_SIGN = BLOCKS.register("evil_wall_hanging_sign",
+            () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.EVIL));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

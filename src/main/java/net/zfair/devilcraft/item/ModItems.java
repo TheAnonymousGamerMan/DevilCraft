@@ -108,6 +108,12 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.EVIL_SPIRIT, 0xfc031c, 0x82030f,
                     new Item.Properties()));
 
+    public static final RegistryObject<Item> EVIL_SIGN = ITEMS.register("evil_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.EVIL_SIGN.get(), ModBlocks.EVIL_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> EVIL_HANGING_SIGN = ITEMS.register("evil_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.EVIL_HANGING_SIGN.get(), ModBlocks.EVIL_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

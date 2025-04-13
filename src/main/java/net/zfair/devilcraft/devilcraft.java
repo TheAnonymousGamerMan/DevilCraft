@@ -2,6 +2,7 @@ package net.zfair.devilcraft;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -28,6 +29,7 @@ import net.zfair.devilcraft.recipe.ModRecipes;
 import net.zfair.devilcraft.screen.AltarBlockScreen;
 import net.zfair.devilcraft.screen.ModMenuTypes;
 import net.zfair.devilcraft.sound.ModSounds;
+import net.zfair.devilcraft.util.ModWoodTypes;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -94,6 +96,8 @@ public class devilcraft
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            Sheets.addWoodType(ModWoodTypes.EVIL);
+
             EntityRenderers.register(ModEntities.EVIL_SPIRIT.get(), EvilSpiritRenderer::new);
 
             MenuScreens.register(ModMenuTypes.ALTAR_MENU.get(), AltarBlockScreen::new);

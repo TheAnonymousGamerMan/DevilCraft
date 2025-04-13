@@ -62,6 +62,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.EVIL_GEM);
         simpleItem(ModItems.EVIL_SEEDS);
 
+        simpleItem(ModItems.EVIL_SIGN);
+        simpleItem(ModItems.EVIL_HANGING_SIGN);
+
         handheldItem(ModItems.EVIL_SWORD);
         handheldItem(ModItems.EVIL_AXE);
         handheldItem(ModItems.EVIL_PICKAXE);

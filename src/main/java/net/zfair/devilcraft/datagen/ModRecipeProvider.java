@@ -10,6 +10,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.common.extensions.IForgeItem;
 import net.zfair.devilcraft.block.ModBlocks;
 import net.zfair.devilcraft.devilcraft;
 import net.zfair.devilcraft.item.ModItems;
@@ -98,6 +99,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_pure_evil", has(ModBlocks.EVIL_BLOCK.get()))
                 .save(pWriter, devilcraft.MOD_ID + ":eye_recipe");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EVIL_DOOR.get(), 3)
+                .pattern("EE ")
+                .pattern("EE ")
+                .pattern("EE ")
+                .define('E', ModBlocks.EVIL_PLANK.get())
+                .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":door_recipe");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EVIL_PRESSURE_PLATE.get())
+                .pattern("   ")
+                .pattern("   ")
+                .pattern("EE ")
+                .define('E', ModBlocks.EVIL_PLANK.get())
+                .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":pressure_plate_recipe");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EVIL_TRAPDOOR.get(), 2)
+                .pattern("   ")
+                .pattern("EEE")
+                .pattern("EEE")
+                .define('E', ModBlocks.EVIL_PLANK.get())
+                .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":trapdoor_recipe");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EVIL_FENCE.get(), 3)
+                .pattern("   ")
+                .pattern("ESE")
+                .pattern("ESE")
+                .define('S', Items.STICK)
+                .define('E', ModBlocks.EVIL_PLANK.get())
+                .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":fence_recipe");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EVIL_FENCE_GATE.get())
+                .pattern("   ")
+                .pattern("SES")
+                .pattern("SES")
+                .define('S', Items.STICK)
+                .define('E', ModBlocks.EVIL_PLANK.get())
+                .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":fence_gate_recipe");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.EVIL_INGOT.get(), 9)
                 .requires(ModBlocks.EVIL_BLOCK.get())
                 .unlockedBy("has_evil_block", has(ModBlocks.EVIL_BLOCK.get()))
@@ -112,6 +155,36 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.EVIL_LOG.get())
                 .unlockedBy("has_evil_log", has(ModBlocks.EVIL_LOG.get()))
                 .save(pWriter, devilcraft.MOD_ID + ":planks_from_log");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.EVIL_PLANK.get(), 4)
+                .requires(ModBlocks.EVIL_WOOD.get())
+                .unlockedBy("has_evil_wood", has(ModBlocks.EVIL_LOG.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":planks_from_wood");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.EVIL_PLANK.get(), 4)
+                .requires(ModBlocks.STRIPPED_EVIL_LOG.get())
+                .unlockedBy("has_stripped_evil_log", has(ModBlocks.EVIL_LOG.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":planks_from_stripped_log");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.EVIL_PLANK.get(), 4)
+                .requires(ModBlocks.STRIPPED_EVIL_WOOD.get())
+                .unlockedBy("has_stripped_evil_wood", has(ModBlocks.EVIL_LOG.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":planks_from_stripped_wood");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.EVIL_WOOD.get(), 3)
+                .requires(ModBlocks.EVIL_LOG.get(), 4)
+                .unlockedBy("has_evil_log", has(ModBlocks.EVIL_LOG.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":wood_from_log");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.STRIPPED_EVIL_WOOD.get(), 3)
+                .requires(ModBlocks.STRIPPED_EVIL_LOG.get(), 4)
+                .unlockedBy("has_stripped_evil_log", has(ModBlocks.EVIL_LOG.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":stripped_wood_from_stripped_log");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.EVIL_BUTTON.get(), 1)
+                .requires(ModBlocks.EVIL_PLANK.get(), 1)
+                .unlockedBy("has_evil_plank", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":button_recipe");
 
     }
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-12T14:36:49.8764835	Item Models: devilcraft
+// 1.20.1	2025-04-13T11:14:25.8024683	Item Models: devilcraft
 1d77e039951f6e62ee143b79945a8dec65555641 assets/devilcraft/models/item/devil_horns.json
 5d88e3f76e8ef2d46269401afa6ef435429cb97f assets/devilcraft/models/item/devil_meat.json
 b560b534ed2f8221524136f6269df225e9f47468 assets/devilcraft/models/item/devil_spawn_egg.json
@@ -33,6 +33,7 @@ d881588115713a12691b03ac2b824318fe99ca79 assets/devilcraft/models/item/evil_ches
 7b17b37b52fe7a54490f93526667638a77fce3aa assets/devilcraft/models/item/evil_fence.json
 6ff1178aa97428e1c33e2219843df202de87e554 assets/devilcraft/models/item/evil_fence_gate.json
 b3d2f9b6cfe1e1a5180234ff4751288135a4e777 assets/devilcraft/models/item/evil_gem.json
+49ff07dead61ba7dac1aa83948cbfd9fcc8b6c2d assets/devilcraft/models/item/evil_hanging_sign.json
 8afbe33e0dff2428d2cd984b9da2ca3bd5bdc90d assets/devilcraft/models/item/evil_helmet.json
 767e2c7d42ffa3fb8164ef920aa548b61dbaf51b assets/devilcraft/models/item/evil_helmet_amethyst_trim.json
 6dc00314e02410beafe6f27315e3d0124cd0bd3f assets/devilcraft/models/item/evil_helmet_copper_trim.json
@@ -62,6 +63,7 @@ fc1399c8c8d1ff32dd231606ff7782fbca401458 assets/devilcraft/models/item/evil_pick
 3bed76b024df73d35413233131514c63f56d9f44 assets/devilcraft/models/item/evil_rose.json
 ebb737b1da9c4c1774376d74ae6eb5b846d42540 assets/devilcraft/models/item/evil_seeds.json
 3610246311225c98f0c1178c22e9140aa26e099e assets/devilcraft/models/item/evil_shovel.json
+19ddd3e108bf2fdc8e255b13693d14b722415ed6 assets/devilcraft/models/item/evil_sign.json
 50ef5fa7d2856c51fccc1e3a0c34e43dee29dad5 assets/devilcraft/models/item/evil_slab.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/devilcraft/models/item/evil_spirit_spawn_egg.json
 8e7ab489bb01e2ff241c3bbdbe9cb22cb4dc49ce assets/devilcraft/models/item/evil_stairs.json

@@ -74,6 +74,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.add(ModBlocks.EVIL_CROP.get(), createCropDrops(ModBlocks.EVIL_CROP.get(), ModItems.EVIL_GEM.get(),
                 ModItems.EVIL_SEEDS.get(), lootitemcondition$builder));
+
+        this.add(ModBlocks.EVIL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.EVIL_SIGN.get()));
+        this.add(ModBlocks.EVIL_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.EVIL_SIGN.get()));
+        this.add(ModBlocks.EVIL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.EVIL_HANGING_SIGN.get()));
+        this.add(ModBlocks.EVIL_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.EVIL_HANGING_SIGN.get()));
     }
     protected LootTable.Builder createGenericOreDrop(Block pBlock, Item Item) {
         return createSilkTouchDispatchTable(pBlock,

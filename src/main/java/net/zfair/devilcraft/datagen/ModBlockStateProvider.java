@@ -9,6 +9,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zfair.devilcraft.block.ModBlocks;
@@ -79,6 +80,29 @@ public class ModBlockStateProvider extends BlockStateProvider{
 
         simpleBlockWithItem(ModBlocks.ALTAR_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/altar_block")));
+
+        signBlock(((StandingSignBlock) ModBlocks.EVIL_SIGN.get()), ((WallSignBlock) ModBlocks.EVIL_WALL_SIGN.get()),
+                blockTexture(ModBlocks.EVIL_PLANK.get()));
+
+        hangingSignBlock((ModBlocks.EVIL_HANGING_SIGN.get()), ModBlocks.EVIL_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.EVIL_PLANK.get()));
+
+    }
+    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+        ModelFile sign = models().sign(name(signBlock), texture);
+        hangingSignBlock(signBlock, wallSignBlock, sign);
+    }
+
+    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ModelFile sign) {
+        simpleBlock(signBlock, sign);
+        simpleBlock(wallSignBlock, sign);
+    }
+
+    private String name(Block block) {
+        return key(block).getPath();
+    }
+
+    private ResourceLocation key(Block block) {
+        return ForgeRegistries.BLOCKS.getKey(block);
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
