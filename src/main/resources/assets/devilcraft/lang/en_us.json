@@ -60,7 +60,17 @@
   "block.devilcraft.evil_door":"Evil Door",
   "block.devilcraft.evil_trapdoor":"Evil Trapdoor",
 
+  "block.devilcraft.evil_wood":"Evil Wood",
+  "block.devilcraft.stripped_evil_log":"Stripped Evil Log",
+  "block.devilcraft.stripped_evil_wood":"Stripped Evil Wood",
+  "block.devilcraft.evil_leaves":"Evil Leaves",
+
+
+  "block.devilcraft.altar_block":"Evil Altar",
+
   "tooltip.devilcraft.evil_detector.tooltip": "Finds Evil Ore in a 32x32 Radius",
+
+  "tooltip.devilcraft.altar_block.tooltip": "Test",
 
   "sounds.devilcraft.test": "Test",
 

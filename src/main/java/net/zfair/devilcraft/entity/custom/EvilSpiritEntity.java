@@ -23,6 +23,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.zfair.devilcraft.entity.ai.EvilSpiritAttackGoal;
 import net.zfair.devilcraft.sound.ModSounds;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class EvilSpiritEntity extends Monster {
@@ -111,14 +112,14 @@ public class EvilSpiritEntity extends Monster {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 20.0D) // 10 hearts
+                .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D)
-                .add(Attributes.ATTACK_DAMAGE, 3.0D) // Deals 1.5 hearts per hit
-                .add(Attributes.FOLLOW_RANGE, 35.0D); // Distance to detect targets
+                .add(Attributes.ATTACK_DAMAGE, 4.0D)
+                .add(Attributes.FOLLOW_RANGE, 35.0D);
     }
 
     @Override
-    protected @Nullable SoundEvent getAmbientSound() {
+    protected SoundEvent getAmbientSound() {
         return ModSounds.EVIL_SPIRIT_AMBIENT.get();
     }
 

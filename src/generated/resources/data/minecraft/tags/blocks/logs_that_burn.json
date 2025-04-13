@@ -1,5 +1,8 @@
 {
   "values": [
-    "devilcraft:evil_log"
+    "devilcraft:evil_log",
+    "devilcraft:stripped_evil_log",
+    "devilcraft:evil_wood",
+    "devilcraft:stripped_evil_wood"
   ]
 }

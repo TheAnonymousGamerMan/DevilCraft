@@ -1,0 +1,12 @@
+{
+  "type": "devilcraft:altar",
+  "ingredients": [
+    {
+      "item": "devilcraft:un_eye"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "devilcraft:eye"
+  }
+}

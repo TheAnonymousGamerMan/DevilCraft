@@ -43,7 +43,16 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.EVIL_PLANK.get());
         this.dropSelf(ModBlocks.EVIL_TRAPDOOR.get());
 
+        this.dropSelf(ModBlocks.STRIPPED_EVIL_WOOD.get());
+        this.dropSelf(ModBlocks.EVIL_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_EVIL_LOG.get());
+
+        this.dropSelf(ModBlocks.ALTAR_BLOCK.get());
+
         this.dropSelf(ModBlocks.EVIL_ROSE.get());
+
+        this.add(ModBlocks.EVIL_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.EVIL_BLOCK.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         this.add(ModBlocks.POTTED_EVIL_ROSE.get(), createPotFlowerItemTable(ModBlocks.EVIL_ROSE.get()));
 

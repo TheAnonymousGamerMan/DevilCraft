@@ -2,7 +2,6 @@
   "parent": "minecraft:block/cube_column",
   "textures": {
     "end": "devilcraft:block/evil_log_top",
-    "particle": "devilcraft:block/evil_log_side",
-    "side": "devilcraft:block/evil_log_side"
+    "side": "devilcraft:block/evil_log"
   }
 }

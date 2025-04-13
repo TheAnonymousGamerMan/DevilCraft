@@ -9,6 +9,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zfair.devilcraft.block.ModBlocks;
 import net.zfair.devilcraft.block.custom.EvilCropBlock;
@@ -23,10 +24,27 @@ public class ModBlockStateProvider extends BlockStateProvider{
 
     @Override
     protected void registerStatesAndModels() {
+
         topSideBottomBlock(ModBlocks.CRYING_DEVIL_BLOCK);
         topSideBottomBlock(ModBlocks.EVIL_GRASS);
 
-        pillarBlock(ModBlocks.EVIL_LOG);
+        logBlock(((RotatedPillarBlock) ModBlocks.EVIL_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.EVIL_WOOD.get()), blockTexture(ModBlocks.EVIL_LOG.get()), blockTexture(ModBlocks.EVIL_LOG.get()));
+
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_EVIL_LOG.get()), blockTexture(ModBlocks.STRIPPED_EVIL_LOG.get()),
+                ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID, "block/stripped_evil_log_top"));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_EVIL_WOOD.get()), blockTexture(ModBlocks.STRIPPED_EVIL_WOOD.get()),
+                blockTexture(ModBlocks.STRIPPED_EVIL_WOOD.get()));
+
+        blockItem(ModBlocks.EVIL_LOG);
+        blockItem(ModBlocks.EVIL_WOOD);
+        blockItem(ModBlocks.STRIPPED_EVIL_LOG);
+        blockItem(ModBlocks.STRIPPED_EVIL_WOOD);
+
+        leavesBlock(ModBlocks.EVIL_LEAVES);
+
+
+
 
         sixSidedOrientableBlock(ModBlocks.DEVIL_PUMPKIN);
         sixSidedOrientableBlock(ModBlocks.DEVIL_O_LANTERN);
@@ -58,6 +76,20 @@ public class ModBlockStateProvider extends BlockStateProvider{
                 blockTexture(ModBlocks.EVIL_ROSE.get())).renderType("cutout"));
         simpleBlockWithItem(ModBlocks.POTTED_EVIL_ROSE.get(), models().singleTexture("potted_catmint", ResourceLocation.withDefaultNamespace("flower_pot_cross"), "plant",
                 blockTexture(ModBlocks.EVIL_ROSE.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.ALTAR_BLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/altar_block")));
+    }
+
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.tryParse("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(devilcraft.MOD_ID +
+                ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 
     public void makeEvilCrop(CropBlock block, String modelName, String textureName) {

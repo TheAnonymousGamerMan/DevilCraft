@@ -6,6 +6,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.zfair.devilcraft.block.ModBlocks;
 import net.zfair.devilcraft.devilcraft;
 import net.zfair.devilcraft.item.ModItems;
 import org.jetbrains.annotations.Nullable;
@@ -24,5 +25,14 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.EVIL_CHESTPLATE.get(),
                         ModItems.EVIL_LEGGINGS.get(),
                         ModItems.EVIL_BOOTS.get());
+
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.EVIL_LOG.get().asItem())
+                .add(ModBlocks.EVIL_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_EVIL_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_EVIL_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(ModBlocks.EVIL_PLANK.get().asItem());
     }
 }

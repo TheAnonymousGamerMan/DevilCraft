@@ -1,11 +1,11 @@
-// 1.20.1	2025-04-03T16:26:14.1590616	Tags for minecraft:block mod id devilcraft
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/devilcraft/tags/blocks/needs_evil_tool.json
+// 1.20.1	2025-04-12T20:20:15.2991264	Tags for minecraft:block mod id devilcraft
+661bf0750e11f2a325cd55a31ebdb291b9c316c7 data/devilcraft/tags/blocks/needs_evil_tool.json
 19289c8894f63f21338d5acf3f876e2bd1e442a0 data/forge/tags/blocks/needs_netherite_tool.json
 891d011eb161970a682bcf58a7e9002f9cd8e7fd data/minecraft/tags/blocks/fences.json
 2dee80f6c5d71be32adcf5da36a4248b53f0fd1a data/minecraft/tags/blocks/fence_gates.json
-47b9ae1d7c7bd00be2fa234c8489068c3a24cb86 data/minecraft/tags/blocks/logs_that_burn.json
+0279deadbc2fe17a2fe1824118609af03d719c0f data/minecraft/tags/blocks/logs_that_burn.json
 4101115391d59c8b8aa055fb9200dc07eccfd179 data/minecraft/tags/blocks/mineable/axe.json
-dfc538c7e650f860c1ed12fe954dd3543c92773f data/minecraft/tags/blocks/mineable/pickaxe.json
+c70bd37c08f33df934192652ec962b1cf0f91661 data/minecraft/tags/blocks/mineable/pickaxe.json
 6fc30420ef9baac3ee167f720b4532ecb66f96b7 data/minecraft/tags/blocks/needs_diamond_tool.json
 dfc538c7e650f860c1ed12fe954dd3543c92773f data/minecraft/tags/blocks/needs_iron_tool.json
 88ec79a44a90c8867378f83315a52dbf1d4ae692 data/minecraft/tags/blocks/planks.json

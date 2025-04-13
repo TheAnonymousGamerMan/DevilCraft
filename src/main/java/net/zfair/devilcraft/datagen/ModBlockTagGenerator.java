@@ -36,7 +36,7 @@ this.tag(BlockTags.NEEDS_IRON_TOOL)
 this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
         .add(ModBlocks.CRYING_DEVIL_BLOCK.get());
 
-this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
+this.tag(NEEDS_NETHERITE_TOOL)
         .add(ModBlocks.EVIL_ORE.get(),
                 ModBlocks.DEEPSLATE_EVIL_ORE.get(),
                 ModBlocks.EVIL_LOG.get(),
@@ -50,16 +50,18 @@ this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 ModBlocks.EVIL_TRAPDOOR.get(),
                 ModBlocks.EVIL_PRESSURE_PLATE.get()
         );
-this.tag(ModTags.Blocks.NEEDS_EVIL_TOOL
+this.tag(ModTags.Blocks.NEEDS_EVIL_TOOL)
+        .add(ModBlocks.ALTAR_BLOCK.get()
+        );
 
-);
 
 this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
         .add(ModBlocks.PURE_EVIL_BLOCK.get(),
                 ModBlocks.VERY_EVIL_BLOCK.get(),
                 ModBlocks.EVIL_BLOCK.get(),
                 ModBlocks.DEEPSLATE_EVIL_ORE.get(),
-                ModBlocks.EVIL_ORE.get()
+                ModBlocks.EVIL_ORE.get(),
+                ModBlocks.ALTAR_BLOCK.get()
                 );
 
 this.tag(BlockTags.MINEABLE_WITH_AXE)
@@ -77,8 +79,11 @@ this.tag(BlockTags.MINEABLE_WITH_AXE)
                 ModBlocks.EVIL_PRESSURE_PLATE.get()
         );
 this.tag(BlockTags.LOGS_THAT_BURN)
-        .add(ModBlocks.EVIL_LOG.get()
-        );
+        .add(ModBlocks.EVIL_LOG.get())
+        .add(ModBlocks.STRIPPED_EVIL_LOG.get())
+        .add(ModBlocks.EVIL_WOOD.get())
+        .add(ModBlocks.STRIPPED_EVIL_WOOD.get());
+
 this.tag(BlockTags.PLANKS)
         .add(ModBlocks.EVIL_PLANK.get()
         );

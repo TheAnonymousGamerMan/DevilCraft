@@ -51,6 +51,8 @@ DeferredRegister.create(Registries.CREATIVE_MODE_TAB, devilcraft.MOD_ID);
 
                         pOutput.accept(ModItems.EVIL_SPIRIT_SPAWN_EGG.get());
 
+                        pOutput.accept(ModBlocks.ALTAR_BLOCK.get());
+
                         pOutput.accept(ModBlocks.CRYING_DEVIL_BLOCK.get());
                         pOutput.accept(ModBlocks.DEVIL_PUMPKIN.get());
                         pOutput.accept(ModBlocks.DEVIL_O_LANTERN.get());
@@ -60,8 +62,15 @@ DeferredRegister.create(Registries.CREATIVE_MODE_TAB, devilcraft.MOD_ID);
                         pOutput.accept(ModBlocks.PURE_EVIL_BLOCK.get());
                         pOutput.accept(ModBlocks.VERY_EVIL_BLOCK.get());
                         pOutput.accept(ModBlocks.DEVIL_PORTAL_FRAME.get());
+
                         pOutput.accept(ModBlocks.EVIL_LOG.get());
+                        pOutput.accept(ModBlocks.EVIL_WOOD.get());
+                        pOutput.accept(ModBlocks.STRIPPED_EVIL_LOG.get());
+                        pOutput.accept(ModBlocks.STRIPPED_EVIL_WOOD.get());
+
                         pOutput.accept(ModBlocks.EVIL_PLANK.get());
+                        pOutput.accept(ModBlocks.EVIL_LEAVES.get());
+
                         pOutput.accept(ModBlocks.EVIL_GRASS.get());
                         pOutput.accept(ModBlocks.EVIL_DIRT.get());
 
