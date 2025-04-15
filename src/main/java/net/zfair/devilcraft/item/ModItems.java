@@ -5,6 +5,7 @@ import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.RegistryObject;
 import net.zfair.devilcraft.block.ModBlocks;
 import net.zfair.devilcraft.entity.ModEntities;
+import net.zfair.devilcraft.item.custom.FireBallItem;
 import net.zfair.devilcraft.item.custom.ModArmorItem;
 import net.zfair.devilcraft.item.custom.SATAN_PITCHFORK;
 import net.zfair.devilcraft.devilcraft;
@@ -113,6 +114,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> EVIL_HANGING_SIGN = ITEMS.register("evil_hanging_sign",
             () -> new HangingSignItem(ModBlocks.EVIL_HANGING_SIGN.get(), ModBlocks.EVIL_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> FIREBALL_ITEM = ITEMS.register("fireball_item",
+            () -> new FireBallItem(new Item.Properties().stacksTo(16)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

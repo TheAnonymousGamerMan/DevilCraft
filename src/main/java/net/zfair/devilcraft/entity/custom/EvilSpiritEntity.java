@@ -6,6 +6,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -18,10 +19,15 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.zfair.devilcraft.entity.ai.EvilSpiritAttackGoal;
+import net.zfair.devilcraft.entity.ai.EvilSpiritFireballAttackGoal;
 import net.zfair.devilcraft.sound.ModSounds;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -103,11 +109,14 @@ public class EvilSpiritEntity extends Monster {
     @Override
     public void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new EvilSpiritAttackGoal(this, 1.0D, true));
+        this.goalSelector.addGoal(2, new EvilSpiritFireballAttackGoal(this));
+        this.goalSelector.addGoal(3, new EvilSpiritAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Mob.class, true, entity ->
+                entity instanceof Animal || entity instanceof Villager || entity instanceof WanderingTrader || entity instanceof Turtle));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -115,7 +124,16 @@ public class EvilSpiritEntity extends Monster {
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D)
                 .add(Attributes.ATTACK_DAMAGE, 4.0D)
-                .add(Attributes.FOLLOW_RANGE, 35.0D);
+                .add(Attributes.FOLLOW_RANGE, 50.0D);
+    }
+
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+
+        if (source.is(DamageTypes.ON_FIRE) || source.is(DamageTypes.IN_FIRE)) {
+            return false;
+        }
+        return super.hurt(source, amount);
     }
 
     @Override

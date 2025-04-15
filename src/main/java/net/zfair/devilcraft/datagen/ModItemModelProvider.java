@@ -62,6 +62,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.EVIL_GEM);
         simpleItem(ModItems.EVIL_SEEDS);
 
+        simpleItem(ModItems.FIREBALL_ITEM);
+
+        saplingItem(ModBlocks.EVIL_SAPLING);
+
         simpleItem(ModItems.EVIL_SIGN);
         simpleItem(ModItems.EVIL_HANGING_SIGN);
 
@@ -134,6 +138,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         }
     }
 
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID,"block/" + item.getId().getPath()));
+    }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),

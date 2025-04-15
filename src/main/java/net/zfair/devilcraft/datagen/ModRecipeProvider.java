@@ -2,6 +2,7 @@ package net.zfair.devilcraft.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -123,6 +124,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
                 .save(pWriter, devilcraft.MOD_ID + ":trapdoor_recipe");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EVIL_SLAB.get(), 6)
+                .pattern("   ")
+                .pattern("   ")
+                .pattern("EEE")
+                .define('E', ModBlocks.EVIL_PLANK.get())
+                .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":slab_recipe");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EVIL_STAIRS.get(), 4)
+                .pattern("E  ")
+                .pattern("EE ")
+                .pattern("EEE")
+                .define('E', ModBlocks.EVIL_PLANK.get())
+                .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":stairs_recipe");
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EVIL_FENCE.get(), 3)
                 .pattern("   ")
                 .pattern("ESE")
@@ -140,6 +157,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('E', ModBlocks.EVIL_PLANK.get())
                 .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
                 .save(pWriter, devilcraft.MOD_ID + ":fence_gate_recipe");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EVIL_SIGN.get(), 3)
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern(" S ")
+                .define('S', Items.STICK)
+                .define('E', ModBlocks.EVIL_PLANK.get())
+                .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":sign_recipe");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EVIL_HANGING_SIGN.get(), 6)
+                .pattern("E E")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModBlocks.EVIL_PLANK.get())
+                .define('E', Items.CHAIN)
+                .unlockedBy("has_evil_planks", has(ModBlocks.EVIL_PLANK.get()))
+                .save(pWriter, devilcraft.MOD_ID + ":hanging_sign_recipe");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.EVIL_INGOT.get(), 9)
                 .requires(ModBlocks.EVIL_BLOCK.get())

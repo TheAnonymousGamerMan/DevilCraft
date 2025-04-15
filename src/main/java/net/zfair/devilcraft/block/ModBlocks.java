@@ -16,6 +16,7 @@ import net.zfair.devilcraft.block.custom.*;
 import net.zfair.devilcraft.devilcraft;
 import net.zfair.devilcraft.item.ModItems;
 import net.zfair.devilcraft.util.ModWoodTypes;
+import net.zfair.devilcraft.worldgen.tree.EvilTreeGrower;
 
 import java.util.function.Supplier;
 
@@ -127,6 +128,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> EVIL_WALL_HANGING_SIGN = BLOCKS.register("evil_wall_hanging_sign",
             () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.EVIL));
 
+    public static final RegistryObject<Block> EVIL_SAPLING = registerBlock("evil_sapling",
+            () -> new SaplingBlock(new EvilTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).sound(SoundType.GRASS)));
+
+    public static final RegistryObject<Block> POTTED_EVIL_SAPLING = BLOCKS.register("potted_evil_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.EVIL_SAPLING,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -2,14 +2,20 @@ package net.zfair.devilcraft.event;
 
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.data.tags.BiomeTagsProvider;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import  net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.zfair.devilcraft.block.entity.ModBlockEntities;
 import net.zfair.devilcraft.block.entity.renderer.AltarBlockEntityRenderer;
 import net.zfair.devilcraft.devilcraft;
+import net.zfair.devilcraft.entity.ModEntities;
 import net.zfair.devilcraft.entity.client.EvilSpiritModel;
 import net.zfair.devilcraft.entity.client.ModModelLayers;
 

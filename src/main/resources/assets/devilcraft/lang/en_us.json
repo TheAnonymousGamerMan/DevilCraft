@@ -34,6 +34,8 @@
 
   "item.devilcraft.evil_spirit_spawn_egg": "Evil Spirit Spawn Egg",
 
+  "item.devilcraft.fireball_item": "FireBall",
+
   "entity.devilcraft.evil_spirit": "Evil Spirit",
 
   "block.devilcraft.evil_rose": "Evil Rose",
@@ -67,6 +69,8 @@
 
   "block.devilcraft.evil_sign":"Evil Sign",
   "block.devilcraft.evil_hanging_sign":"Evil Hanging Sign",
+
+  "block.devilcraft.evil_sapling": "Evil Sapling",
 
   "block.devilcraft.altar_block":"Evil Altar",
 

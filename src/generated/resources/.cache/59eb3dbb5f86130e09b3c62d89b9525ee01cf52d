@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-13T11:14:25.8014663	Loot Tables
+// 1.20.1	2025-04-13T19:09:35.9194462	Loot Tables
 cd2df2713164acb2717ccee4bb05534c8ca1e8fe data/devilcraft/loot_tables/blocks/altar_block.json
 c045460ff8f380de7610847eb7976698fde2b4e6 data/devilcraft/loot_tables/blocks/crying_devil_block.json
 45d968a7d05fe50c320a631f1914a34ee9df7473 data/devilcraft/loot_tables/blocks/deepslate_evil_ore.json
@@ -13,12 +13,13 @@ e55cd7f500d57eb6f348f0866a03f8dd9b50d543 data/devilcraft/loot_tables/blocks/evil
 2c84e75169cb074b8ab31316e83ece76d830adc4 data/devilcraft/loot_tables/blocks/evil_fence_gate.json
 d44f2de9f7f1664b122aa0fb2fb1b2b1a1893390 data/devilcraft/loot_tables/blocks/evil_grass.json
 c40e5e070d801a29dc685a8505b90a895b33b591 data/devilcraft/loot_tables/blocks/evil_hanging_sign.json
-6d9cfd89c7a532f0319f796db03c75cb24c154fb data/devilcraft/loot_tables/blocks/evil_leaves.json
+222e23462f36ca818fcb22340abbc217a6ce1b82 data/devilcraft/loot_tables/blocks/evil_leaves.json
 7a79a152c2d7b8563a1d59e69bdcf8625d50ad72 data/devilcraft/loot_tables/blocks/evil_log.json
 1994c420491ff095ad7d5900a0b6420593d7f4c4 data/devilcraft/loot_tables/blocks/evil_ore.json
 620373c77f1e5e98195575d7b647f135d3164275 data/devilcraft/loot_tables/blocks/evil_plank.json
 50f4758ac3e2416cbb9e78041af4eb3a68d08d7a data/devilcraft/loot_tables/blocks/evil_pressure_plate.json
 68a18bb31aabf7b02f84eaf8ce13dc6258649237 data/devilcraft/loot_tables/blocks/evil_rose.json
+a24dce3a001ab207046339c1e9da702a36926eb4 data/devilcraft/loot_tables/blocks/evil_sapling.json
 5805a7131e4bb4dfa70d3cf34fa5e3f15741eb39 data/devilcraft/loot_tables/blocks/evil_sign.json
 a2f0e6aec7a3a64616b90da2ee7270f4b2b7f099 data/devilcraft/loot_tables/blocks/evil_slab.json
 689f5d8aaf69b23ef6dab30d1273fca39d64d4f9 data/devilcraft/loot_tables/blocks/evil_stairs.json
@@ -27,6 +28,7 @@ d2d0dd46068760e7c0e8067344d70418dfae40b6 data/devilcraft/loot_tables/blocks/evil
 98765556cc62f605e1331cf32784fb364af768ac data/devilcraft/loot_tables/blocks/evil_wall_sign.json
 3229a83d062b320295ca25cc1603efff76f347cb data/devilcraft/loot_tables/blocks/evil_wood.json
 2e93623c87e64613e3f761b8f3a2acbd0e488413 data/devilcraft/loot_tables/blocks/potted_evil_rose.json
+ce374353f2e963e1693fc86d0946a6bdc18365c5 data/devilcraft/loot_tables/blocks/potted_evil_sapling.json
 df8772958e965d00f4c20706f0dc40e881a17b33 data/devilcraft/loot_tables/blocks/pure_evil_block.json
 86b0dab7383c495ece4fad813fcb8d310accf1db data/devilcraft/loot_tables/blocks/stripped_evil_log.json
 c09fe96a7f0009ce1a5f04eacecbf9138378ef4d data/devilcraft/loot_tables/blocks/stripped_evil_wood.json

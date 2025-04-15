@@ -32,6 +32,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CRYING_DEVIL_BLOCK.get());
         this.dropSelf(ModBlocks.DEVIL_PUMPKIN.get());
         this.dropSelf(ModBlocks.DEVIL_O_LANTERN.get());
+
         this.dropSelf(ModBlocks.EVIL_FENCE.get());
         this.dropSelf(ModBlocks.EVIL_FENCE_GATE.get());
         this.dropSelf(ModBlocks.EVIL_BUTTON.get());
@@ -43,6 +44,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.EVIL_PLANK.get());
         this.dropSelf(ModBlocks.EVIL_TRAPDOOR.get());
 
+        this.dropSelf(ModBlocks.EVIL_SAPLING.get());
+
         this.dropSelf(ModBlocks.STRIPPED_EVIL_WOOD.get());
         this.dropSelf(ModBlocks.EVIL_WOOD.get());
         this.dropSelf(ModBlocks.STRIPPED_EVIL_LOG.get());
@@ -52,7 +55,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.EVIL_ROSE.get());
 
         this.add(ModBlocks.EVIL_LEAVES.get(), block ->
-                createLeavesDrops(block, ModBlocks.EVIL_BLOCK.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+                createLeavesDrops(block, ModBlocks.EVIL_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.add(ModBlocks.POTTED_EVIL_SAPLING.get(), createPotFlowerItemTable(ModBlocks.EVIL_SAPLING.get()));
 
         this.add(ModBlocks.POTTED_EVIL_ROSE.get(), createPotFlowerItemTable(ModBlocks.EVIL_ROSE.get()));
 

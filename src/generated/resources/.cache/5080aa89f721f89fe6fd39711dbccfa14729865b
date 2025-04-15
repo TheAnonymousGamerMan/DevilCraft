@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-13T11:14:25.8024683	Item Models: devilcraft
+// 1.20.1	2025-04-13T19:00:04.9231647	Item Models: devilcraft
 1d77e039951f6e62ee143b79945a8dec65555641 assets/devilcraft/models/item/devil_horns.json
 5d88e3f76e8ef2d46269401afa6ef435429cb97f assets/devilcraft/models/item/devil_meat.json
 b560b534ed2f8221524136f6269df225e9f47468 assets/devilcraft/models/item/devil_spawn_egg.json
@@ -61,6 +61,7 @@ c72c19a2baff41b4e2f398a2d3ca566296217205 assets/devilcraft/models/item/evil_legg
 fc1399c8c8d1ff32dd231606ff7782fbca401458 assets/devilcraft/models/item/evil_pickaxe.json
 2da8f1cb5a1c76973ea2f50296d34a936611a20c assets/devilcraft/models/item/evil_pressure_plate.json
 3bed76b024df73d35413233131514c63f56d9f44 assets/devilcraft/models/item/evil_rose.json
+de8a62c886d023ed045d69c4b19ce9d28fe24309 assets/devilcraft/models/item/evil_sapling.json
 ebb737b1da9c4c1774376d74ae6eb5b846d42540 assets/devilcraft/models/item/evil_seeds.json
 3610246311225c98f0c1178c22e9140aa26e099e assets/devilcraft/models/item/evil_shovel.json
 19ddd3e108bf2fdc8e255b13693d14b722415ed6 assets/devilcraft/models/item/evil_sign.json
@@ -70,6 +71,7 @@ ebb737b1da9c4c1774376d74ae6eb5b846d42540 assets/devilcraft/models/item/evil_seed
 1051e3b99cf9667759133c0f3942aca4405ce3a5 assets/devilcraft/models/item/evil_sword.json
 d85075a4af53ada38bdd93c398e656747fe9f8c4 assets/devilcraft/models/item/evil_trapdoor.json
 32d9c7f03b83a0a8fdf55e6675e755e29dabcc22 assets/devilcraft/models/item/eye.json
+765a16a299fa78b73dc020dfcf4a0f2ca18b2b42 assets/devilcraft/models/item/fireball_item.json
 106b5f36ee5d75a5803c4f4e3d80014fe3dca4ff assets/devilcraft/models/item/gluttony.json
 ce8e6b450b68800ab1d53f57b1cd68b0cdedbe05 assets/devilcraft/models/item/greed.json
 cfbc597252563ccfcc962489e7d58fac44ab4655 assets/devilcraft/models/item/lust.json

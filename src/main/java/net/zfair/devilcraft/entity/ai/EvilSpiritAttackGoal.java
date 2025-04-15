@@ -19,8 +19,8 @@ public class EvilSpiritAttackGoal extends MeleeAttackGoal {
     @Override
     public void start() {
         super.start();
-        attackDelay = 17;
-        ticksUntilNextAttack = 17;
+        attackDelay = 10;
+        ticksUntilNextAttack = 10;
     }
 
     @Override

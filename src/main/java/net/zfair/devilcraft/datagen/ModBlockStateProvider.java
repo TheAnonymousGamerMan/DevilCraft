@@ -75,8 +75,11 @@ public class ModBlockStateProvider extends BlockStateProvider{
 
         simpleBlockWithItem(ModBlocks.EVIL_ROSE.get(), models().cross(blockTexture(ModBlocks.EVIL_ROSE.get()).getPath(),
                 blockTexture(ModBlocks.EVIL_ROSE.get())).renderType("cutout"));
-        simpleBlockWithItem(ModBlocks.POTTED_EVIL_ROSE.get(), models().singleTexture("potted_catmint", ResourceLocation.withDefaultNamespace("flower_pot_cross"), "plant",
+        simpleBlockWithItem(ModBlocks.POTTED_EVIL_ROSE.get(), models().singleTexture("potted_evil_rose", ResourceLocation.withDefaultNamespace("flower_pot_cross"), "plant",
                 blockTexture(ModBlocks.EVIL_ROSE.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.POTTED_EVIL_SAPLING.get(), models().singleTexture("potted_evil_sapling", ResourceLocation.withDefaultNamespace("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.EVIL_SAPLING.get())).renderType("cutout"));
 
         simpleBlockWithItem(ModBlocks.ALTAR_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/altar_block")));
@@ -86,7 +89,13 @@ public class ModBlockStateProvider extends BlockStateProvider{
 
         hangingSignBlock((ModBlocks.EVIL_HANGING_SIGN.get()), ModBlocks.EVIL_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.EVIL_PLANK.get()));
 
+        saplingBlock(ModBlocks.EVIL_SAPLING);
     }
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
     public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
         ModelFile sign = models().sign(name(signBlock), texture);
         hangingSignBlock(signBlock, wallSignBlock, sign);

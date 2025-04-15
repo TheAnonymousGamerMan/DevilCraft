@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.client.Minecraft;
@@ -30,7 +31,14 @@ import net.zfair.devilcraft.screen.AltarBlockScreen;
 import net.zfair.devilcraft.screen.ModMenuTypes;
 import net.zfair.devilcraft.sound.ModSounds;
 import net.zfair.devilcraft.util.ModWoodTypes;
+import net.zfair.devilcraft.worldgen.DevilCraftRegion;
+import net.zfair.devilcraft.worldgen.biome.ModTerraBlender;
+import net.zfair.devilcraft.worldgen.biome.surface.ModSurfaceRules;
+import net.zfair.devilcraft.worldgen.placement.ModPlacementModifierTypes;
+import net.zfair.devilcraft.worldgen.tree.custom.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(devilcraft.MOD_ID)
@@ -64,6 +72,14 @@ public class devilcraft
 
         ModRecipes.register(modEventBus);
 
+        ModTrunkPlacerTypes.register(modEventBus);
+
+        ModTerraBlender.registerBiomes();
+
+        ModPlacementModifierTypes.PLACEMENT_MODIFIERS.register(modEventBus);
+
+        Regions.register(new DevilCraftRegion());
+
         MinecraftForge.EVENT_BUS.register(this);
 
 
@@ -74,6 +90,9 @@ public class devilcraft
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.EVIL_ROSE.getId(), ModBlocks.POTTED_EVIL_ROSE);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.EVIL_SAPLING.getId(), ModBlocks.POTTED_EVIL_SAPLING);
+
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });
     }
 
@@ -99,6 +118,8 @@ public class devilcraft
             Sheets.addWoodType(ModWoodTypes.EVIL);
 
             EntityRenderers.register(ModEntities.EVIL_SPIRIT.get(), EvilSpiritRenderer::new);
+
+            EntityRenderers.register(ModEntities.FIREBALL_PROJECTILE.get(), ThrownItemRenderer::new);
 
             MenuScreens.register(ModMenuTypes.ALTAR_MENU.get(), AltarBlockScreen::new);
             LOGGER.info("DEVIL CRAFTING");
