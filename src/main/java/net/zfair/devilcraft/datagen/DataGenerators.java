@@ -34,15 +34,13 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         RegistrySetBuilder builder = new RegistrySetBuilder()
-                .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
+                .add(Registries.CONFIGURED_FEATURE, ModPlacedFeatures::bootstrapConfiguredFeatures) // Fix this line
                 .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrapPlacedFeatures)
                 .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
-
                 .add(Registries.BIOME, context -> {
-
                     HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
                     HolderGetter<ConfiguredWorldCarver<?>> carvers = context.lookup(Registries.CONFIGURED_CARVER);
-                    context.register(ModBiomes.EVIL_BIOME, ModBiomes.evilBiome(placedFeatures, packOutput));
+                    context.register(ModBiomes.EVIL_BIOME, ModBiomes.evilBiome(placedFeatures, carvers));
                 });
 
         DatapackBuiltinEntriesProvider registryProvider = new DatapackBuiltinEntriesProvider(
@@ -81,10 +79,11 @@ public class DataGenerators {
                 });
             }
 
+
             @Override
             public String getName() {
                 return "ModBiomeTagsProviderWrapper";
             }
         });
-    }
+        }
 }

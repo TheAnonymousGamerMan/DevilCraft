@@ -17,12 +17,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraft.tags.BlockTags;
 import net.zfair.devilcraft.block.ModBlocks;
 import net.zfair.devilcraft.devilcraft;
+import net.zfair.devilcraft.worldgen.tree.custom.EvilTrunkPlacer;
 
 import java.util.List;
 
@@ -32,7 +32,8 @@ public class ModPlacedFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> EVIL_ORE_KEY = createKey("evil_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PREPARE_EVIL_GROUND_KEY = createKey("prepare_evil_ground");
 
-    public static final ResourceKey<PlacedFeature> EVIL_PLACED_KEY = createPlacedKey("evil_placed_key");
+    public static final ResourceKey<PlacedFeature> EVIL_PLACED_KEY_1 = createPlacedKey("evil_placed_key_1");
+    public static final ResourceKey<PlacedFeature> EVIL_PLACED_KEY_3 = createPlacedKey("evil_placed_key_3");
     public static final ResourceKey<PlacedFeature> EVIL_ORE_PLACED_KEY = createPlacedKey("evil_ore_placed");
     public static final ResourceKey<PlacedFeature> PREPARE_EVIL_GROUND_PLACED_KEY = createPlacedKey("prepare_evil_ground_placed");
 
@@ -49,7 +50,7 @@ public class ModPlacedFeatures {
         context.register(EVIL_KEY, new ConfiguredFeature<>(Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.EVIL_LOG.get()),
-                        new StraightTrunkPlacer(5, 4, 3), // Temporary, replace with EvilTrunkPlacer
+                        new EvilTrunkPlacer(5, 4, 3), // Replace StraightTrunkPlacer with EvilTrunkPlacer
                         BlockStateProvider.simple(ModBlocks.EVIL_LEAVES.get()),
                         new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                         new TwoLayersFeatureSize(1, 0, 2)
@@ -81,15 +82,24 @@ public class ModPlacedFeatures {
     public static void bootstrapPlacedFeatures(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        // Evil Placed Key (previously in evil_placed_key.json)
-        // In ModPlacedFeatures.java, inside bootstrapPlacedFeatures
-        context.register(EVIL_PLACED_KEY, new PlacedFeature(
+        context.register(EVIL_PLACED_KEY_1, new PlacedFeature(
                 configuredFeatures.getOrThrow(EVIL_KEY),
                 List.of(
-                        new WeightedCountPlacement(List.of(
-                                new WeightedCountPlacement.WeightedEntry(1, 9), // 90% chance of 1 tree
-                                new WeightedCountPlacement.WeightedEntry(3, 1)  // 10% chance of 3 trees
-                        )),
+                        CountPlacement.of(1), // Always place 1 tree
+                        RarityFilter.onAverageOnceEvery(90),
+                        InSquarePlacement.spread(),
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
+                        PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+                        BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(new BlockPos(0, -1, 0), Blocks.DIRT))
+                )
+        ));
+
+        // 10% chance of 3 trees
+        context.register(EVIL_PLACED_KEY_3, new PlacedFeature(
+                configuredFeatures.getOrThrow(EVIL_KEY),
+                List.of(
+                        CountPlacement.of(3), // Place 3 trees
+                        RarityFilter.onAverageOnceEvery(10), // 10% chance
                         InSquarePlacement.spread(),
                         SurfaceWaterDepthFilter.forMaxDepth(0),
                         PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,

@@ -1,4 +1,4 @@
-package net.zfair.devilcraft.worldgen;
+package net.zfair.devilcraft.worldgen.biome;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Climate;
 import net.zfair.devilcraft.devilcraft;
-import net.zfair.devilcraft.worldgen.biome.ModBiomes;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
 

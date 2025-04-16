@@ -31,10 +31,9 @@ import net.zfair.devilcraft.screen.AltarBlockScreen;
 import net.zfair.devilcraft.screen.ModMenuTypes;
 import net.zfair.devilcraft.sound.ModSounds;
 import net.zfair.devilcraft.util.ModWoodTypes;
-import net.zfair.devilcraft.worldgen.DevilCraftRegion;
+import net.zfair.devilcraft.worldgen.biome.DevilCraftRegion;
 import net.zfair.devilcraft.worldgen.biome.ModTerraBlender;
 import net.zfair.devilcraft.worldgen.biome.surface.ModSurfaceRules;
-import net.zfair.devilcraft.worldgen.placement.ModPlacementModifierTypes;
 import net.zfair.devilcraft.worldgen.tree.custom.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 import terrablender.api.Regions;
@@ -75,8 +74,6 @@ public class devilcraft
         ModTrunkPlacerTypes.register(modEventBus);
 
         ModTerraBlender.registerBiomes();
-
-        ModPlacementModifierTypes.PLACEMENT_MODIFIERS.register(modEventBus);
 
         Regions.register(new DevilCraftRegion());
 

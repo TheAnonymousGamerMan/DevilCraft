@@ -14,8 +14,8 @@ import net.zfair.devilcraft.worldgen.biome.ModBiomeTags;
 
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_EVIL_ORE = registerKey("add_evil_ore");
-
-    public static final ResourceKey<BiomeModifier> ADD_TREE_EVIL = registerKey("add_tree_evil");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_EVIL_1 = registerKey("add_tree_evil_1");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_EVIL_3 = registerKey("add_tree_evil_3");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -26,11 +26,15 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.EVIL_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
-        context.register(ADD_TREE_EVIL, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+        context.register(ADD_TREE_EVIL_1, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(ModBiomeTags.Biomes.IS_EVIL_BIOME),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.EVIL_PLACED_KEY)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.EVIL_PLACED_KEY_1)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
+        context.register(ADD_TREE_EVIL_3, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(ModBiomeTags.Biomes.IS_EVIL_BIOME),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.EVIL_PLACED_KEY_3)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
