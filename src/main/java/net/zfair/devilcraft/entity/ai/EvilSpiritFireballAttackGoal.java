@@ -52,7 +52,7 @@ public class EvilSpiritFireballAttackGoal extends Goal {
 
             throwFireball(target);
 
-            evilSpirit.setAttacking(true);
+            evilSpirit.setAttacking(true);;
 
             attackCooldown = cooldownTicks;
         } else {

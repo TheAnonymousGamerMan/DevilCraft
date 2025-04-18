@@ -74,6 +74,12 @@
 
   "block.devilcraft.altar_block":"Evil Altar",
 
+  "block.devilcraft.evil_rack":"EvilRack",
+
+  "block.devilcraft.mod_portal":"Mod Portal",
+
+  "block.devilcraft.indestructible_maker_block":"Indestructible Maker Block",
+
   "tooltip.devilcraft.evil_detector.tooltip": "Finds Evil Ore in a 32x32 Radius",
 
   "tooltip.devilcraft.altar_block.tooltip": "Test",

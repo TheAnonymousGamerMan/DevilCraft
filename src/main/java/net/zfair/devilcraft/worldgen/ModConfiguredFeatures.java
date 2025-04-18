@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -27,6 +28,8 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> EVIL_KEY = registerKey("evil");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> EVIL_GROVE_KEY = registerKey("evil_grove");
+
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceable = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
@@ -36,6 +39,15 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_EVIL_ORE.get().defaultBlockState()));
 
         register(context, OVERWORLD_EVIL_ORE_KEY, Feature.ORE, new OreConfiguration(overworldEvilOres, 3));
+
+        register(context, EVIL_GROVE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.EVIL_LOG.get()),
+                new EvilTrunkPlacer(5, 4, 3),
+
+                BlockStateProvider.simple(Blocks.AIR),
+                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+
+                new TwoLayersFeatureSize(1, 0, 2)).build());
 
         register(context, EVIL_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.EVIL_LOG.get()),

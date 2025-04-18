@@ -17,5 +17,7 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(ModBiomeTags.Biomes.IS_EVIL_BIOME).add(ModBiomes.EVIL_BIOME);
+        tag(ModBiomeTags.Biomes.IS_EVIL_WASTES).add(ModBiomes.EVIL_WASTES);
+        tag(ModBiomeTags.Biomes.IS_EVIL_GROVE).add(ModBiomes.EVIL_GROVE);
     }
 }

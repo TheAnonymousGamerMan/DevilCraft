@@ -51,6 +51,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEVIL_PORTAL_FRAME = registerBlock("devil_portal_frame",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(-1.0f).noLootTable()));
 
+    public static final RegistryObject<Block> EVIL_RACK = registerBlock("evil_rack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERRACK).strength(2.0f)));
+
     public static final RegistryObject<Block> EVIL_LOG = registerBlock("evil_log",
             () -> new ModEvilFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3f).sound(SoundType.WOOD).requiresCorrectToolForDrops()));
 
@@ -100,7 +103,15 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(2f).sound(SoundType.GRAVEL)));
 
     public static final RegistryObject<Block> EVIL_GRASS = registerBlock("evil_grass",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).strength(2f).sound(SoundType.GRAVEL)));
+            () -> new EvilGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).strength(2f).sound(SoundType.GRAVEL)));
+
+    public static final RegistryObject<Block> INDESTRUCTIBLE_MAKER_BLOCK = BLOCKS.register(
+            "indestructible_maker_block",
+            IndestructibleMakerBlock::new);
+
+    public static final RegistryObject<Item> INDESTRUCTIBLE_MAKER_BLOCK_ITEM = ModItems.ITEMS.register(
+            "indestructible_maker_block",
+            () -> new BlockItem(INDESTRUCTIBLE_MAKER_BLOCK.get(), new Item.Properties()));
 
     public static final RegistryObject<Block> EVIL_CROP = BLOCKS.register("evil_crop",
             () -> new EvilCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
@@ -121,7 +132,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> EVIL_WALL_SIGN = BLOCKS.register("evil_wall_sign",
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.EVIL));
 
-
     public static final RegistryObject<Block> EVIL_HANGING_SIGN = BLOCKS.register("evil_hanging_sign",
             () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), ModWoodTypes.EVIL));
 
@@ -130,6 +140,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> EVIL_SAPLING = registerBlock("evil_sapling",
             () -> new SaplingBlock(new EvilTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).sound(SoundType.GRASS)));
+
+    public static final RegistryObject<Block> MOD_PORTAL = registerBlock("mod_portal",
+            () -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noLootTable().noOcclusion()));
 
     public static final RegistryObject<Block> POTTED_EVIL_SAPLING = BLOCKS.register("potted_evil_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.EVIL_SAPLING,

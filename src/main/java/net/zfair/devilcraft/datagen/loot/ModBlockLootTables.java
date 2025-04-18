@@ -38,7 +38,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.EVIL_BUTTON.get());
         this.dropSelf(ModBlocks.EVIL_PRESSURE_PLATE.get());
         this.dropSelf(ModBlocks.EVIL_STAIRS.get());
-        this.dropSelf(ModBlocks.EVIL_GRASS.get());
         this.dropSelf(ModBlocks.EVIL_DIRT.get());
         this.dropSelf(ModBlocks.EVIL_LOG.get());
         this.dropSelf(ModBlocks.EVIL_PLANK.get());
@@ -52,7 +51,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropSelf(ModBlocks.ALTAR_BLOCK.get());
 
+        this.dropSelf(ModBlocks.EVIL_RACK.get());
+
         this.dropSelf(ModBlocks.EVIL_ROSE.get());
+
+        this.add(ModBlocks.EVIL_GRASS.get(), block -> createSingleItemTable(ModBlocks.EVIL_DIRT.get()));
 
         this.add(ModBlocks.EVIL_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.EVIL_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));

@@ -1,5 +1,6 @@
-// 1.20.1	2025-04-13T10:22:49.3087165	Tags for minecraft:item mod id devilcraft
-0ada5cd2ab1df7d923912c378836c30ce8d81633 data/minecraft/tags/items/dirt.json
+// 1.20.1	2025-04-17T16:36:54.7062898	Tags for minecraft:item mod id devilcraft
+b72e5e78bf9e805b27b6c456b73eea09df09584a data/minecraft/tags/items/dirt.json
+5c8f5b0d5f04dfe61691a8e10a59cd19a15bd30f data/minecraft/tags/items/leaves.json
 690e0a3ad8750a07ed02a450901a4881b8ff556d data/minecraft/tags/items/logs_that_burn.json
 88ec79a44a90c8867378f83315a52dbf1d4ae692 data/minecraft/tags/items/planks.json
 149db8016b5884557920e267d153dcf25ba3e27e data/minecraft/tags/items/trimmable_armor.json

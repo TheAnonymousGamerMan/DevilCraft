@@ -15,7 +15,7 @@ public class ModEntities {
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, devilcraft.MOD_ID);
 
     public static final RegistryObject<EntityType<EvilSpiritEntity>> EVIL_SPIRIT =
-            ENTITY_TYPES.register("evil_spirit", () -> EntityType.Builder.of(EvilSpiritEntity::new, MobCategory.MONSTER)
+            ENTITY_TYPES.register("evil_spirit", () -> EntityType.Builder.of(EvilSpiritEntity::new, ModMobCategories.EVIL_CREATURES.getVanillaCategory())
                     .sized(1f,2f).build("evil_spirit"));
 
     public static final RegistryObject<EntityType<FireBallProjectileEntity>> FIREBALL_PROJECTILE =

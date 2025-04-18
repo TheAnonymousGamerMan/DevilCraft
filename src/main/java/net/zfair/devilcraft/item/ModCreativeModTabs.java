@@ -65,6 +65,10 @@ DeferredRegister.create(Registries.CREATIVE_MODE_TAB, devilcraft.MOD_ID);
                         pOutput.accept(ModBlocks.VERY_EVIL_BLOCK.get());
                         pOutput.accept(ModBlocks.DEVIL_PORTAL_FRAME.get());
 
+                        pOutput.accept(ModBlocks.EVIL_RACK.get());
+                        pOutput.accept(ModBlocks.MOD_PORTAL.get());
+                        pOutput.accept(ModBlocks.INDESTRUCTIBLE_MAKER_BLOCK.get());
+
                         pOutput.accept(ModBlocks.EVIL_LOG.get());
                         pOutput.accept(ModBlocks.EVIL_WOOD.get());
                         pOutput.accept(ModBlocks.STRIPPED_EVIL_LOG.get());

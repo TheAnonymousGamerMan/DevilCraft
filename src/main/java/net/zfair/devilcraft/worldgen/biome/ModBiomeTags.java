@@ -10,5 +10,11 @@ public class ModBiomeTags {
     public static class Biomes {
         public static final TagKey<Biome> IS_EVIL_BIOME = TagKey.create(
                 Registries.BIOME, ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID, "is_evil_biome"));
+
+        public static final TagKey<Biome> IS_EVIL_WASTES = TagKey.create(
+                Registries.BIOME, ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID, "is_evil_wastes"));
+
+        public static final TagKey<Biome> IS_EVIL_GROVE = TagKey.create(
+                Registries.BIOME, ResourceLocation.fromNamespaceAndPath(devilcraft.MOD_ID, "is_evil_grove"));
     }
 }

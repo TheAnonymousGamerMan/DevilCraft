@@ -1,16 +1,19 @@
 package net.zfair.devilcraft;
 
 import com.mojang.logging.LogUtils;
+import com.mojang.serialization.Codec;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,13 +22,19 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.zfair.devilcraft.block.ModBlocks;
 import net.zfair.devilcraft.block.entity.ModBlockEntities;
 import net.zfair.devilcraft.entity.ModEntities;
+import net.zfair.devilcraft.entity.ModMobCategories;
+import net.zfair.devilcraft.entity.ModMobCategory;
 import net.zfair.devilcraft.entity.client.EvilSpiritRenderer;
+import net.zfair.devilcraft.entity.custom.EvilSpiritEntity;
 import net.zfair.devilcraft.item.ModCreativeModTabs;
 import net.zfair.devilcraft.item.ModItems;
 import net.zfair.devilcraft.loot.ModLootModifiers;
+import net.zfair.devilcraft.network.ModMessages;
 import net.zfair.devilcraft.recipe.ModRecipes;
 import net.zfair.devilcraft.screen.AltarBlockScreen;
 import net.zfair.devilcraft.screen.ModMenuTypes;
@@ -48,6 +57,9 @@ public class devilcraft
     public static final String MOD_ID = "devilcraft";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
+
+    private static final DeferredRegister<Codec<? extends BiomeModifier>> BIOME_MODIFIER_SERIALIZERS =
+            DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, MOD_ID);
 
     public devilcraft(FMLJavaModLoadingContext context)
     {
@@ -75,10 +87,13 @@ public class devilcraft
 
         ModTerraBlender.registerBiomes();
 
+        ModMessages.register();
+
         Regions.register(new DevilCraftRegion());
 
-        MinecraftForge.EVENT_BUS.register(this);
+        BIOME_MODIFIER_SERIALIZERS.register(modEventBus);
 
+        MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
 
@@ -118,10 +133,11 @@ public class devilcraft
 
             EntityRenderers.register(ModEntities.FIREBALL_PROJECTILE.get(), ThrownItemRenderer::new);
 
+            ModMobCategories.init();
+
             MenuScreens.register(ModMenuTypes.ALTAR_MENU.get(), AltarBlockScreen::new);
             LOGGER.info("DEVIL CRAFTING");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-
         }
     }
 }

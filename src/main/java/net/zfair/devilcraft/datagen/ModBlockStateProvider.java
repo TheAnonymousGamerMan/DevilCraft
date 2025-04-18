@@ -42,6 +42,8 @@ public class ModBlockStateProvider extends BlockStateProvider{
         blockItem(ModBlocks.STRIPPED_EVIL_LOG);
         blockItem(ModBlocks.STRIPPED_EVIL_WOOD);
 
+        blockWithItem(ModBlocks.INDESTRUCTIBLE_MAKER_BLOCK);
+
         leavesBlock(ModBlocks.EVIL_LEAVES);
 
 
@@ -49,15 +51,14 @@ public class ModBlockStateProvider extends BlockStateProvider{
 
         sixSidedOrientableBlock(ModBlocks.DEVIL_PUMPKIN);
         sixSidedOrientableBlock(ModBlocks.DEVIL_O_LANTERN);
-
         blockWithItem(ModBlocks.EVIL_BLOCK);
         blockWithItem(ModBlocks.EVIL_DIRT);
         blockWithItem(ModBlocks.EVIL_PLANK);
-        blockWithItem(ModBlocks.DEVIL_PORTAL_FRAME);
         blockWithItem(ModBlocks.PURE_EVIL_BLOCK);
         blockWithItem(ModBlocks.VERY_EVIL_BLOCK);
         blockWithItem(ModBlocks.DEEPSLATE_EVIL_ORE);
         blockWithItem(ModBlocks.EVIL_ORE);
+        blockWithItem(ModBlocks.EVIL_RACK);
 
         stairsBlock(((StairBlock) ModBlocks.EVIL_STAIRS.get()), blockTexture(ModBlocks.EVIL_PLANK.get()));
         slabBlock(((SlabBlock) ModBlocks.EVIL_SLAB.get()), blockTexture(ModBlocks.EVIL_PLANK.get()), blockTexture(ModBlocks.EVIL_PLANK.get()));

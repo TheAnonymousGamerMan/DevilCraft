@@ -7,6 +7,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
@@ -20,6 +21,7 @@ import net.zfair.devilcraft.worldgen.ModBiomeModifiers;
 import net.zfair.devilcraft.worldgen.ModConfiguredFeatures;
 import net.zfair.devilcraft.worldgen.ModPlacedFeatures;
 import net.zfair.devilcraft.worldgen.biome.ModBiomes;
+import net.zfair.devilcraft.worldgen.dimension.ModDimensions;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -34,14 +36,20 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         RegistrySetBuilder builder = new RegistrySetBuilder()
-                .add(Registries.CONFIGURED_FEATURE, ModPlacedFeatures::bootstrapConfiguredFeatures) // Fix this line
-                .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrapPlacedFeatures)
+                .add(Registries.DIMENSION_TYPE, ModDimensions::bootstrapType)
+                .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
+                .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
                 .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
+                .add(Registries.LEVEL_STEM, ModDimensions::bootstrapStem)
+
                 .add(Registries.BIOME, context -> {
                     HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
                     HolderGetter<ConfiguredWorldCarver<?>> carvers = context.lookup(Registries.CONFIGURED_CARVER);
-                    context.register(ModBiomes.EVIL_BIOME, ModBiomes.evilBiome(placedFeatures, carvers));
+                    context.register(ModBiomes.EVIL_BIOME, ModBiomes.evilBiome(placedFeatures, carvers,10, 1, 2));
+                    context.register(ModBiomes.EVIL_WASTES, ModBiomes.evilWastes(placedFeatures, carvers,10, 1, 2));
+                    context.register(ModBiomes.EVIL_GROVE, ModBiomes.evilGrove(placedFeatures, carvers, 10, 1, 2));
                 });
+
 
         DatapackBuiltinEntriesProvider registryProvider = new DatapackBuiltinEntriesProvider(
                 packOutput,

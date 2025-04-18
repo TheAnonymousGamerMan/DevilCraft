@@ -27,6 +27,13 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(ModHangingSignBlockEntity::new,
                             ModBlocks.EVIL_HANGING_SIGN.get(), ModBlocks.EVIL_WALL_HANGING_SIGN.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<IndestructibleMakerBlockEntity>> INDESTRUCTIBLE_MAKER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("indestructible_maker_block_entity", () ->
+                    BlockEntityType.Builder.of(
+                            IndestructibleMakerBlockEntity::new,
+                            ModBlocks.INDESTRUCTIBLE_MAKER_BLOCK.get()
+                    ).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

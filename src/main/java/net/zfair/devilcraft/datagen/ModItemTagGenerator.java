@@ -37,6 +37,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
         this.tag(ItemTags.DIRT)
                 .add(ModBlocks.EVIL_DIRT.get().asItem())
-                .add(ModBlocks.EVIL_GRASS.get().asItem());
+                .add(ModBlocks.EVIL_GRASS.get().asItem())
+                .add(ModBlocks.EVIL_RACK.get().asItem());
+
+        this.tag(ItemTags.LEAVES)
+                .add(ModBlocks.EVIL_LEAVES.get().asItem());
     }
 }

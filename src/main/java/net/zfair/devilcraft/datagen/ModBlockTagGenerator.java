@@ -51,7 +51,8 @@ this.tag(NEEDS_NETHERITE_TOOL)
                 ModBlocks.EVIL_PRESSURE_PLATE.get()
         );
 this.tag(ModTags.Blocks.NEEDS_EVIL_TOOL)
-        .add(ModBlocks.ALTAR_BLOCK.get()
+        .add(ModBlocks.ALTAR_BLOCK.get(),
+                ModBlocks.EVIL_RACK.get()
         );
 
 
@@ -61,7 +62,8 @@ this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 ModBlocks.EVIL_BLOCK.get(),
                 ModBlocks.DEEPSLATE_EVIL_ORE.get(),
                 ModBlocks.EVIL_ORE.get(),
-                ModBlocks.ALTAR_BLOCK.get()
+                ModBlocks.ALTAR_BLOCK.get(),
+                ModBlocks.EVIL_RACK.get()
                 );
 
 this.tag(BlockTags.MINEABLE_WITH_AXE)
@@ -101,6 +103,12 @@ this.tag(BlockTags.FENCE_GATES)
 
 this.tag(BlockTags.DIRT)
         .add(ModBlocks.EVIL_DIRT.get())
-        .add(ModBlocks.EVIL_GRASS.get());
+        .add(ModBlocks.EVIL_GRASS.get())
+        .add(ModBlocks.EVIL_RACK.get()
+        );
+this.tag(BlockTags.LEAVES)
+        .add(ModBlocks.EVIL_LEAVES.get()
+        );
+
     }
 }
