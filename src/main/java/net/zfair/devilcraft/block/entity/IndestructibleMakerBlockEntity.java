@@ -11,7 +11,7 @@ import net.zfair.devilcraft.network.ModMessages;
 import net.zfair.devilcraft.network.packet.RequestRadiusInputS2CPacket;
 
 public class IndestructibleMakerBlockEntity extends BlockEntity {
-    private int radius = 1; // Default radius
+    private int radius = 1;
     private Player awaitingInputPlayer = null;
 
     public IndestructibleMakerBlockEntity(BlockPos pos, BlockState state) {

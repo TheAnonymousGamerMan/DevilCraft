@@ -35,9 +35,9 @@ public class ModBiomes {
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> carvers = context.lookup(Registries.CONFIGURED_CARVER);
-        context.register(EVIL_BIOME, evilBiome(placedFeatures, carvers, 10, 1, 2));
-        context.register(EVIL_WASTES, evilWastes(placedFeatures, carvers, 10, 1, 2));
-        context.register(EVIL_GROVE, evilGrove(placedFeatures, carvers, 10, 1, 2));
+        context.register(EVIL_BIOME, evilBiome(placedFeatures, carvers, 5, 1, 2));
+        context.register(EVIL_WASTES, evilWastes(placedFeatures, carvers, 5, 1, 2));
+        context.register(EVIL_GROVE, evilGrove(placedFeatures, carvers, 5, 1, 2));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {

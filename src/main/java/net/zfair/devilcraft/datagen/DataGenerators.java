@@ -45,9 +45,9 @@ public class DataGenerators {
                 .add(Registries.BIOME, context -> {
                     HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
                     HolderGetter<ConfiguredWorldCarver<?>> carvers = context.lookup(Registries.CONFIGURED_CARVER);
-                    context.register(ModBiomes.EVIL_BIOME, ModBiomes.evilBiome(placedFeatures, carvers,10, 1, 2));
-                    context.register(ModBiomes.EVIL_WASTES, ModBiomes.evilWastes(placedFeatures, carvers,10, 1, 2));
-                    context.register(ModBiomes.EVIL_GROVE, ModBiomes.evilGrove(placedFeatures, carvers, 10, 1, 2));
+                    context.register(ModBiomes.EVIL_BIOME, ModBiomes.evilBiome(placedFeatures, carvers,5, 1, 2));
+                    context.register(ModBiomes.EVIL_WASTES, ModBiomes.evilWastes(placedFeatures, carvers,5, 1, 2));
+                    context.register(ModBiomes.EVIL_GROVE, ModBiomes.evilGrove(placedFeatures, carvers, 5, 1, 2));
                 });
 
 

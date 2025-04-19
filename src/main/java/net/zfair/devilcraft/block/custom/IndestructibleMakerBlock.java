@@ -34,7 +34,6 @@ public class IndestructibleMakerBlock extends Block implements EntityBlock {
                     return InteractionResult.SUCCESS;
                 }
             } else {
-                player.sendSystemMessage(Component.literal("You must be in Creative mode to set the radius."));
                 return InteractionResult.FAIL;
             }
         }
